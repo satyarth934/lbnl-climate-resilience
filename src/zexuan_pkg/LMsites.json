@@ -1,0 +1,3059 @@
+{
+ "displayFieldName": "Name",
+ "fieldAliases": {
+  "OBJECTID": "OBJECTID",
+  "ID": "ID",
+  "TransferYear": "TransferYear",
+  "Directory": "Directory",
+  "FactSheetUrl": "FactSheetUrl",
+  "ZoomLevel": "ZoomLevel",
+  "Latitude": "Latitude",
+  "Longitude": "Longitude",
+  "Name": "Name",
+  "NameMnemonic": "NameMnemonic",
+  "StateCode": "StateCode",
+  "PublicWebpageUrl": "PublicWebpageUrl",
+  "RegulatoryDriver": "RegulatoryDriver",
+  "MaintenanceCategory": "MaintenanceCategory",
+  "SiteCoordSysWkid": "SiteCoordSysWkid",
+  "SiteCoordSysWkt": "SiteCoordSysWkt",
+  "AvailableOnWeb": "AvailableOnWeb",
+  "ShortName": "ShortName",
+  "LastUpdated": "LastUpdated",
+  "LastRun": "LastRun"
+ },
+ "geometryType": "esriGeometryPoint",
+ "spatialReference": {
+  "wkid": 102100,
+  "latestWkid": 3857
+ },
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID"
+  },
+  {
+   "name": "ID",
+   "type": "esriFieldTypeInteger",
+   "alias": "ID"
+  },
+  {
+   "name": "TransferYear",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "TransferYear"
+  },
+  {
+   "name": "Directory",
+   "type": "esriFieldTypeString",
+   "alias": "Directory",
+   "length": 100
+  },
+  {
+   "name": "FactSheetUrl",
+   "type": "esriFieldTypeString",
+   "alias": "FactSheetUrl",
+   "length": 200
+  },
+  {
+   "name": "ZoomLevel",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "ZoomLevel"
+  },
+  {
+   "name": "Latitude",
+   "type": "esriFieldTypeDouble",
+   "alias": "Latitude"
+  },
+  {
+   "name": "Longitude",
+   "type": "esriFieldTypeDouble",
+   "alias": "Longitude"
+  },
+  {
+   "name": "Name",
+   "type": "esriFieldTypeString",
+   "alias": "Name",
+   "length": 200
+  },
+  {
+   "name": "NameMnemonic",
+   "type": "esriFieldTypeString",
+   "alias": "NameMnemonic",
+   "length": 10
+  },
+  {
+   "name": "StateCode",
+   "type": "esriFieldTypeString",
+   "alias": "StateCode",
+   "length": 6
+  },
+  {
+   "name": "PublicWebpageUrl",
+   "type": "esriFieldTypeString",
+   "alias": "PublicWebpageUrl",
+   "length": 100
+  },
+  {
+   "name": "RegulatoryDriver",
+   "type": "esriFieldTypeString",
+   "alias": "RegulatoryDriver",
+   "length": 50
+  },
+  {
+   "name": "MaintenanceCategory",
+   "type": "esriFieldTypeString",
+   "alias": "MaintenanceCategory",
+   "length": 50
+  },
+  {
+   "name": "SiteCoordSysWkid",
+   "type": "esriFieldTypeInteger",
+   "alias": "SiteCoordSysWkid"
+  },
+  {
+   "name": "SiteCoordSysWkt",
+   "type": "esriFieldTypeString",
+   "alias": "SiteCoordSysWkt",
+   "length": 1000
+  },
+  {
+   "name": "AvailableOnWeb",
+   "type": "esriFieldTypeString",
+   "alias": "AvailableOnWeb",
+   "length": 10
+  },
+  {
+   "name": "ShortName",
+   "type": "esriFieldTypeString",
+   "alias": "ShortName",
+   "length": 200
+  },
+  {
+   "name": "LastUpdated",
+   "type": "esriFieldTypeDate",
+   "alias": "LastUpdated",
+   "length": 8
+  },
+  {
+   "name": "LastRun",
+   "type": "esriFieldTypeDate",
+   "alias": "LastRun",
+   "length": 8
+  }
+ ],
+ "features": [
+  {
+   "attributes": {
+    "OBJECTID": 59,
+    "ID": 59,
+    "TransferYear": 1996,
+    "Directory": "\\MI\\Adrian",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=2091",
+    "ZoomLevel": 14,
+    "Latitude": 41.887939,
+    "Longitude": -84.014692,
+    "Name": "Adrian, MI, Site",
+    "NameMnemonic": "ADR",
+    "StateCode": "MI",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/adrian-michigan-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Adrian Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -9352472.7325999998,
+    "y": 5144208.0023000017
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 60,
+    "ID": 60,
+    "TransferYear": 1997,
+    "Directory": "\\PA\\Aliquippa",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1792",
+    "ZoomLevel": 14,
+    "Latitude": 40.642126,
+    "Longitude": -80.243968,
+    "Name": "Aliquippa, PA, Site",
+    "NameMnemonic": "ALP",
+    "StateCode": "PA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/aliquippa-pennsylvania-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Aliquippa Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -8932717.6569999997,
+    "y": 4959697.7782000005
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 1,
+    "ID": 1,
+    "TransferYear": 1998,
+    "Directory": "\\NM\\AmbrosiaLakeDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1478",
+    "ZoomLevel": 15,
+    "Latitude": 35.408798,
+    "Longitude": -107.799285,
+    "Name": "Ambrosia Lake, NM, Disposal Site",
+    "NameMnemonic": "AMB",
+    "StateCode": "NM",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/ambrosia-lake-new-mexico-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Ambrosia Lake Disposal Site",
+    "LastUpdated": 1618441514000,
+    "LastRun": 1620430062000
+   },
+   "geometry": {
+    "x": -12000161.5141,
+    "y": 4219574.8685000017
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 2,
+    "ID": 2,
+    "TransferYear": 2008,
+    "Directory": "\\AK\\Amchitka",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=491",
+    "ZoomLevel": 13,
+    "Latitude": 51.436583,
+    "Longitude": 179.179778,
+    "Name": "Amchitka, AK, Site",
+    "NameMnemonic": "AMC",
+    "StateCode": "AK",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/amchitka-alaska-site",
+    "RegulatoryDriver": "Nevada Offsites",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 102640,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Amchitka Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430190000
+   },
+   "geometry": {
+    "x": 19946201.647399999,
+    "y": 6698886.5905999988
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 61,
+    "ID": 61,
+    "TransferYear": 1993,
+    "Directory": "\\OR\\Albany",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1760",
+    "ZoomLevel": 14,
+    "Latitude": 44.62021,
+    "Longitude": -123.1208,
+    "Name": "Albany, OR, Site",
+    "NameMnemonic": "AOR",
+    "StateCode": "OR",
+    "PublicWebpageUrl": "https://www.energy.gov//lm/albany-oregon-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Albany Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -13705744.7621,
+    "y": 5561928.1801000014
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 62,
+    "ID": 62,
+    "TransferYear": 1985,
+    "Directory": "\\NM\\AcidPuebloCanyon",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1469",
+    "ZoomLevel": 14,
+    "Latitude": 35.88441,
+    "Longitude": -106.30667,
+    "Name": "Acid/Pueblo Canyon, NM, Site",
+    "NameMnemonic": "APC",
+    "StateCode": "NM",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/acidpueblo-canyon-new-mexico-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Acid/Pueblo Canyon Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -11834004.372299999,
+    "y": 4284728.000500001
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 462,
+    "ID": 91,
+    "TransferYear": 2019,
+    "Directory": "\\MA\\Attleboro",
+    "FactSheetUrl": "https://www.lm.doe.gov/Attleboro/Attleboro_Fact_Sheet.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 41.94343,
+    "Longitude": -71.234169,
+    "Name": "Attleboro, MA, Site",
+    "NameMnemonic": "ATT",
+    "StateCode": "MA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/attleboro-massachusetts-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Attleboro Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -7929751.4201999996,
+    "y": 5152509.2954000011
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 3,
+    "ID": 3,
+    "TransferYear": 2004,
+    "Directory": "\\NM\\L-BarDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1515",
+    "ZoomLevel": 15,
+    "Latitude": 35.187651,
+    "Longitude": -107.334722,
+    "Name": "L-Bar, NM, Disposal Site",
+    "NameMnemonic": "BAR",
+    "StateCode": "NM",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/l-bar-new-mexico-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title II",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "L-Bar Disposal Site",
+    "LastUpdated": 1611875114000,
+    "LastRun": 1620429262000
+   },
+   "geometry": {
+    "x": -11948446.5975,
+    "y": 4189411.496299997
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 63,
+    "ID": 63,
+    "TransferYear": 1984,
+    "Directory": "\\NM\\BayoCanyon",
+    "FactSheetUrl": "https://www.energy.gov/sites/prod/files/2020/05/f74/BayoCanyonFactSheet.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 35.88755,
+    "Longitude": -106.24657,
+    "Name": "Bayo Canyon, NM, Site",
+    "NameMnemonic": "BAY",
+    "StateCode": "NM",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/bayo-canyon-new-mexico-aggregate-area-and-fusrap-sites",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Bayo Canyon Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -11827314.070900001,
+    "y": 4285159.4367000014
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 64,
+    "ID": 64,
+    "TransferYear": 1985,
+    "Directory": "\\CA\\Berkeley",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=733",
+    "ZoomLevel": 14,
+    "Latitude": 37.87263,
+    "Longitude": -122.25629,
+    "Name": "Berkeley, CA, Site",
+    "NameMnemonic": "BCA",
+    "StateCode": "CA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/berkeley-california-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Berkeley Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -13609507.949099999,
+    "y": 4561448.2961999997
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 65,
+    "ID": 65,
+    "TransferYear": 2004,
+    "Directory": "\\MA\\Beverly",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=2165",
+    "ZoomLevel": 14,
+    "Latitude": 42.54042,
+    "Longitude": -70.88862,
+    "Name": "Beverly, MA, Site",
+    "NameMnemonic": "BEV",
+    "StateCode": "MA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/beverly-massachusetts-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Beverly Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -7891285.0813999996,
+    "y": 5242278.6631999984
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 4,
+    "ID": 4,
+    "TransferYear": 1997,
+    "Directory": "\\NM\\BluewaterDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1491",
+    "ZoomLevel": 14,
+    "Latitude": 35.270623,
+    "Longitude": -107.947483,
+    "Name": "Bluewater, NM, Disposal Site",
+    "NameMnemonic": "BLU",
+    "StateCode": "NM",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/bluewater-new-mexico-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title II",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Bluewater Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620429265000
+   },
+   "geometry": {
+    "x": -12016658.84,
+    "y": 4200718.8154999986
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5,
+    "ID": 5,
+    "TransferYear": 2004,
+    "Directory": "\\PR\\BONUSDecommissionedReactor",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1787",
+    "ZoomLevel": 18,
+    "Latitude": 18.364744,
+    "Longitude": -67.268557,
+    "Name": "BONUS, PR, Decommissioned Reactor Site",
+    "NameMnemonic": "BON",
+    "StateCode": "PR",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/bonus-puerto-rico-decommissioned-reactor-site",
+    "RegulatoryDriver": "D&D",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "BONUS Decommissioned Reactor Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -7488301.5116000008,
+    "y": 2080285.691300001
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 1265,
+    "ID": 100,
+    "TransferYear": 2019,
+    "Directory": "\\CO\\Bronco",
+    "FactSheetUrl": "",
+    "ZoomLevel": 16,
+    "Latitude": 40.04797041,
+    "Longitude": -108.36858549,
+    "Name": "Bronco, CO, Site",
+    "NameMnemonic": "BRO",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/plowsharevela-uniform-program-sites",
+    "RegulatoryDriver": "PlowshareVelaUniform",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Bronco Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430711000
+   },
+   "geometry": {
+    "x": -12063535.754799999,
+    "y": 4872915.6595000029
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 66,
+    "ID": 66,
+    "TransferYear": 2015,
+    "Directory": "\\CA\\BurrisPark",
+    "FactSheetUrl": "https://www.lm.doe.gov/BurrisPark/Factsheet.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 36.45029,
+    "Longitude": -119.57535,
+    "Name": "Burris Park, CA, Site",
+    "NameMnemonic": "BRP",
+    "StateCode": "CA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/burris-park-california-site",
+    "RegulatoryDriver": "MED/AEC Legacy Site",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Burris Park Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -13311067.0734,
+    "y": 4362758.7915999964
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 67,
+    "ID": 67,
+    "TransferYear": 2002,
+    "Directory": "\\NY\\Buffalo",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=2196",
+    "ZoomLevel": 14,
+    "Latitude": 42.84099,
+    "Longitude": -78.83386,
+    "Name": "Buffalo, NY, Site",
+    "NameMnemonic": "BUF",
+    "StateCode": "NY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/buffalo-new-york-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": 2262,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Buffalo Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -8775745.1524999999,
+    "y": 5287800.1367999986
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 6,
+    "ID": 6,
+    "TransferYear": 1994,
+    "Directory": "\\PA\\BurrellDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1806",
+    "ZoomLevel": 15,
+    "Latitude": 40.433059,
+    "Longitude": -79.242531,
+    "Name": "Burrell, PA, Disposal Site",
+    "NameMnemonic": "BUR",
+    "StateCode": "PA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/burrell-pennsylvania-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Burrell Disposal Site",
+    "LastUpdated": 1614639917000,
+    "LastRun": 1620430208000
+   },
+   "geometry": {
+    "x": -8821238.2000999991,
+    "y": 4929074.2444000021
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 7,
+    "ID": 7,
+    "TransferYear": 1996,
+    "Directory": "\\PA\\CanonsburgDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1811",
+    "ZoomLevel": 17,
+    "Latitude": 40.256152,
+    "Longitude": -80.199721,
+    "Name": "Canonsburg, PA, Disposal Site",
+    "NameMnemonic": "CAN",
+    "StateCode": "PA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/canonsburg-pennsylvania-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Canonsburg Disposal Site",
+    "LastUpdated": 1614639917000,
+    "LastRun": 1620430207000
+   },
+   "geometry": {
+    "x": -8927792.1034999993,
+    "y": 4903235.7087000012
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 68,
+    "ID": 68,
+    "TransferYear": 1986,
+    "Directory": "\\NM\\ChupaderaMesa",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1494",
+    "ZoomLevel": 14,
+    "Latitude": 34.09813,
+    "Longitude": -106.20924,
+    "Name": "Chupadera Mesa, NM, Site",
+    "NameMnemonic": "CHM",
+    "StateCode": "NM",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/chupadera-mesa-new-mexico-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Chupadera Mesa Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -11823158.5143,
+    "y": 4041986.110799998
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 69,
+    "ID": 69,
+    "TransferYear": 1989,
+    "Directory": "\\IL\\ChicagoNorth",
+    "FactSheetUrl": "https://www.lm.doe.gov/Chicago_North/factsheet.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 41.799395,
+    "Longitude": -87.606969,
+    "Name": "Chicago North, IL, Site",
+    "NameMnemonic": "CHN",
+    "StateCode": "IL",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/chicago-north-illinois-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Chicago North Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -9752363.1789999995,
+    "y": 5130976.9934
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 70,
+    "ID": 70,
+    "TransferYear": 1989,
+    "Directory": "\\IL\\ChicagoSouth",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1239",
+    "ZoomLevel": 14,
+    "Latitude": 41.790408,
+    "Longitude": -87.599677,
+    "Name": "Chicago South, IL, Site",
+    "NameMnemonic": "CHS",
+    "StateCode": "IL",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/chicago-south-illinois-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Chicago South Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -9751551.4373000003,
+    "y": 5129635.1009000018
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 1264,
+    "ID": 99,
+    "TransferYear": 2019,
+    "Directory": "\\NY\\Colonie",
+    "FactSheetUrl": "https://www.lm.doe.gov/Colonie/ColonieFactSheet.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 42.689729,
+    "Longitude": -73.802984,
+    "Name": "Colonie, NY, Site",
+    "NameMnemonic": "CLN",
+    "StateCode": "NY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/colonie-new-york-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Colonie Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430711000
+   },
+   "geometry": {
+    "x": -8215710.5978999995,
+    "y": 5264864.0496999994
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 8,
+    "ID": 8,
+    "TransferYear": 2008,
+    "Directory": "\\NV\\CentralNevadaTestArea",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1376",
+    "ZoomLevel": 13,
+    "Latitude": 38.634232,
+    "Longitude": -116.216219,
+    "Name": "Central Nevada Test Area, NV",
+    "NameMnemonic": "CNT",
+    "StateCode": "NV",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/central-nevada-test-area-cnta-nevada-site",
+    "RegulatoryDriver": "Nevada Offsites",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Central Nevada Test Area",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430217000
+   },
+   "geometry": {
+    "x": -12937130.321,
+    "y": 4669413.0508000031
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 71,
+    "ID": 71,
+    "TransferYear": 2001,
+    "Directory": "\\OH\\ColumbusEast",
+    "FactSheetUrl": "https://www.lm.doe.gov/Columbus_East/factsheet.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 39.95694,
+    "Longitude": -83.01174,
+    "Name": "Columbus East, OH, Site",
+    "NameMnemonic": "COE",
+    "StateCode": "OH",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/columbus-east-ohio-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Columbus East Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -9240824.6267000008,
+    "y": 4859686.889200002
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 868,
+    "ID": 98,
+    "TransferYear": 1967,
+    "Directory": "\\WY\\CasperCalibrationModel",
+    "FactSheetUrl": "",
+    "ZoomLevel": 14,
+    "Latitude": 42.900981,
+    "Longitude": -106.445354,
+    "Name": "Casper, WY, Calibration Model",
+    "NameMnemonic": "CSC",
+    "StateCode": "WY",
+    "PublicWebpageUrl": "",
+    "RegulatoryDriver": "Unknown",
+    "MaintenanceCategory": "",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Casper Calibration Model",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -11849442.604600001,
+    "y": 5296912.2695999965
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 9,
+    "ID": 9,
+    "TransferYear": 1996,
+    "Directory": "\\CO\\DurangoDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=942",
+    "ZoomLevel": 16,
+    "Latitude": 37.248481,
+    "Longitude": -107.903876,
+    "Name": "Durango, CO, Disposal Site",
+    "NameMnemonic": "DUD",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/durango-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Durango Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620428729000
+   },
+   "geometry": {
+    "x": -12011804.5309,
+    "y": 4473798.6608999968
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 10,
+    "ID": 10,
+    "TransferYear": 1996,
+    "Directory": "\\CO\\DurangoProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=942",
+    "ZoomLevel": 15,
+    "Latitude": 37.26562,
+    "Longitude": -107.884723,
+    "Name": "Durango, CO, Processing Site",
+    "NameMnemonic": "DUP",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/durango-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 102655,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Durango Processing Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620428735000
+   },
+   "geometry": {
+    "x": -12009672.4287,
+    "y": 4476195.7444000021
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 11,
+    "ID": 11,
+    "TransferYear": 1996,
+    "Directory": "\\SD\\EdgemontDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1844",
+    "ZoomLevel": 15,
+    "Latitude": 43.273539,
+    "Longitude": -103.794231,
+    "Name": "Edgemont, SD, Disposal Site",
+    "NameMnemonic": "EDG",
+    "StateCode": "SD",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/edgemont-south-dakota-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title II",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 32035,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Edgemont Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -11554320.942199999,
+    "y": 5353700.3869000003
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 12,
+    "ID": 12,
+    "TransferYear": 1997,
+    "Directory": "\\TX\\FallsCityDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1856",
+    "ZoomLevel": 16,
+    "Latitude": 28.905375,
+    "Longitude": -98.132276,
+    "Name": "Falls City, TX, Disposal Site",
+    "NameMnemonic": "FCT",
+    "StateCode": "TX",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/falls-city-texas-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Falls City Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430224000
+   },
+   "geometry": {
+    "x": -10924034.9947,
+    "y": 3363607.8966000006
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 13,
+    "ID": 13,
+    "TransferYear": 2008,
+    "Directory": "\\OH\\FernaldPreserve",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=7241",
+    "ZoomLevel": 14,
+    "Latitude": 39.29945,
+    "Longitude": -84.688331,
+    "Name": "Fernald Preserve, OH, Site",
+    "NameMnemonic": "FER",
+    "StateCode": "OH",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/fernald-preserve-ohio-site",
+    "RegulatoryDriver": "CERCLA/RCRA",
+    "MaintenanceCategory": "3",
+    "SiteCoordSysWkid": 3735,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Fernald Preserve Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430052000
+   },
+   "geometry": {
+    "x": -9427461.8830999993,
+    "y": 4764656.4371000007
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 72,
+    "ID": 72,
+    "TransferYear": 1996,
+    "Directory": "\\OH\\Fairfield",
+    "FactSheetUrl": "https://www.lm.doe.gov/Fairfield/factsheet.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 39.36087,
+    "Longitude": -84.54117,
+    "Name": "Fairfield, OH, Site",
+    "NameMnemonic": "FFO",
+    "StateCode": "OH",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/fairfield-ohio-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Fairfield Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -9411079.9955000002,
+    "y": 4773495.7192000002
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 865,
+    "ID": 95,
+    "TransferYear": 1976,
+    "Directory": "\\CO\\GrandJunctionRegionalAirportCalibrationModel",
+    "FactSheetUrl": "",
+    "ZoomLevel": 14,
+    "Latitude": 39.128555,
+    "Longitude": -108.53707,
+    "Name": "Grand Junction Regional Airport, CO, Calibration Model",
+    "NameMnemonic": "GAC",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "",
+    "RegulatoryDriver": "Unknown",
+    "MaintenanceCategory": "",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Grand Junction Regional Airport Calibration Model",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -12082291.364599999,
+    "y": 4740102.7378000021
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 864,
+    "ID": 94,
+    "TransferYear": 1958,
+    "Directory": "\\CO\\GrandJunctionCalibrationModel",
+    "FactSheetUrl": "",
+    "ZoomLevel": 14,
+    "Latitude": 39.043371,
+    "Longitude": -108.573355,
+    "Name": "Grand Junction, CO, Calibration Model",
+    "NameMnemonic": "GJC",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "",
+    "RegulatoryDriver": "Unknown",
+    "MaintenanceCategory": "",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Grand Junction Calibration Model",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -12086330.5923,
+    "y": 4727886.0015999973
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 14,
+    "ID": 14,
+    "TransferYear": 2002,
+    "Directory": "\\CO\\GrandJunction",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=948",
+    "ZoomLevel": 16,
+    "Latitude": 39.043371,
+    "Longitude": -108.573355,
+    "Name": "Grand Junction, CO, Site",
+    "NameMnemonic": "GJO",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/grand-junction-colorado-site",
+    "RegulatoryDriver": "D&D",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6428,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Grand Junction Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430056000
+   },
+   "geometry": {
+    "x": -12086330.5923,
+    "y": 4727886.0015999973
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 15,
+    "ID": 15,
+    "TransferYear": 1999,
+    "Directory": "\\CO\\GrandJunctionProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=960",
+    "ZoomLevel": 16,
+    "Latitude": 39.055441,
+    "Longitude": -108.54925,
+    "Name": "Grand Junction, CO, Processing Site",
+    "NameMnemonic": "GJT",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/grand-junction-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "3",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Grand Junction Processing Site",
+    "LastUpdated": 1614035118000,
+    "LastRun": 1620430060000
+   },
+   "geometry": {
+    "x": -12083647.236,
+    "y": 4729616.134300001
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 866,
+    "ID": 96,
+    "TransferYear": 1967,
+    "Directory": "\\NM\\GrantsCalibrationModel",
+    "FactSheetUrl": "",
+    "ZoomLevel": 14,
+    "Latitude": 35.25447,
+    "Longitude": -107.84307,
+    "Name": "Grants, NM, Calibration Model",
+    "NameMnemonic": "GNC",
+    "StateCode": "NM",
+    "PublicWebpageUrl": "",
+    "RegulatoryDriver": "Unknown",
+    "MaintenanceCategory": "",
+    "SiteCoordSysWkid": 32012,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Grants Calibration Model",
+    "LastUpdated": 1550696772000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -12005035.638,
+    "y": 4198516.5982000008
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 16,
+    "ID": 16,
+    "TransferYear": 2008,
+    "Directory": "\\NM\\Gnome-Coach",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1513",
+    "ZoomLevel": 15,
+    "Latitude": 32.263164,
+    "Longitude": -103.866477,
+    "Name": "Gnome-Coach, NM, Site",
+    "NameMnemonic": "GNO",
+    "StateCode": "NM",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/gnome-coach-new-mexico-site",
+    "RegulatoryDriver": "Nevada Offsites",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Gnome-Coach Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430063000
+   },
+   "geometry": {
+    "x": -11562363.3301,
+    "y": 3797904.7810000032
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 73,
+    "ID": 73,
+    "TransferYear": 1994,
+    "Directory": "\\IL\\GraniteCity",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1249",
+    "ZoomLevel": 14,
+    "Latitude": 38.69149,
+    "Longitude": -90.16289,
+    "Name": "Granite City, IL, Site",
+    "NameMnemonic": "GRC",
+    "StateCode": "IL",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/granite-city-illinois-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Granite City Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -10036887.0032,
+    "y": 4677576.0144999996
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 17,
+    "ID": 17,
+    "TransferYear": 1999,
+    "Directory": "\\CO\\GrandJunctionDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=960",
+    "ZoomLevel": 16,
+    "Latitude": 38.902364,
+    "Longitude": -108.338213,
+    "Name": "Grand Junction, CO, Disposal Site",
+    "NameMnemonic": "GRJ",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/grand-junction-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "3",
+    "SiteCoordSysWkid": 26754,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Grand Junction Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430057000
+   },
+   "geometry": {
+    "x": -12060154.704599999,
+    "y": 4707695.6872000024
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 18,
+    "ID": 18,
+    "TransferYear": 1998,
+    "Directory": "\\UT\\GreenRiverDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1866",
+    "ZoomLevel": 17,
+    "Latitude": 38.978164,
+    "Longitude": -110.136749,
+    "Name": "Green River, UT, Disposal Site",
+    "NameMnemonic": "GRN",
+    "StateCode": "UT",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/green-river-utah-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Green River Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620429122000
+   },
+   "geometry": {
+    "x": -12260366.816300001,
+    "y": 4718544.2353999987
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 19,
+    "ID": 19,
+    "TransferYear": 2008,
+    "Directory": "\\NM\\Gasbuggy",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1500",
+    "ZoomLevel": 15,
+    "Latitude": 36.677903,
+    "Longitude": -107.208999,
+    "Name": "Gasbuggy, NM, Site",
+    "NameMnemonic": "GSB",
+    "StateCode": "NM",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/gasbuggy-new-mexico-site",
+    "RegulatoryDriver": "Nevada Offsites",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Gasbuggy Site",
+    "LastUpdated": 1614121512000,
+    "LastRun": 1620430065000
+   },
+   "geometry": {
+    "x": -11934451.177099999,
+    "y": 4394305.2113000005
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 20,
+    "ID": 20,
+    "TransferYear": 1997,
+    "Directory": "\\CO\\GunnisonDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=970",
+    "ZoomLevel": 16,
+    "Latitude": 38.51014,
+    "Longitude": -106.846387,
+    "Name": "Gunnison, CO, Disposal Site",
+    "NameMnemonic": "GUD",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/gunnison-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Gunnison Disposal Site",
+    "LastUpdated": 1608159914000,
+    "LastRun": 1620428764000
+   },
+   "geometry": {
+    "x": -11894085.3939,
+    "y": 4651744.2687999979
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 21,
+    "ID": 21,
+    "TransferYear": 1997,
+    "Directory": "\\CO\\GunnisonProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=970",
+    "ZoomLevel": 17,
+    "Latitude": 38.528258,
+    "Longitude": -106.942532,
+    "Name": "Gunnison, CO, Processing Site",
+    "NameMnemonic": "GUP",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/gunnison-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 26754,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Gunnison Processing Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620428762000
+   },
+   "geometry": {
+    "x": -11904788.2064,
+    "y": 4654322.0905999988
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 867,
+    "ID": 97,
+    "TransferYear": 1967,
+    "Directory": "\\TX\\GeorgeWestCalibrationModel",
+    "FactSheetUrl": "",
+    "ZoomLevel": 14,
+    "Latitude": 28.334928,
+    "Longitude": -98.050831,
+    "Name": "George West, TX, Calibration Model",
+    "NameMnemonic": "GWC",
+    "StateCode": "TX",
+    "PublicWebpageUrl": "",
+    "RegulatoryDriver": "Unknown",
+    "MaintenanceCategory": "",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "George West Calibration Model",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -10914968.5788,
+    "y": 3291266.5491999984
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 22,
+    "ID": 22,
+    "TransferYear": 1998,
+    "Directory": "\\NE\\HallamDecommissionedReactor",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1359",
+    "ZoomLevel": 18,
+    "Latitude": 40.558519,
+    "Longitude": -96.784697,
+    "Name": "Hallam, NE, Decommissioned Reactor Site",
+    "NameMnemonic": "HAL",
+    "StateCode": "NE",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/hallam-nebraska-decommissioned-reactor-site",
+    "RegulatoryDriver": "D&D",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 32006,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Hallam Decommissioned Reactor Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430226000
+   },
+   "geometry": {
+    "x": -10774023.1866,
+    "y": 4947439.7941000015
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 74,
+    "ID": 74,
+    "TransferYear": 1997,
+    "Directory": "\\OH\\Hamilton",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1725",
+    "ZoomLevel": 14,
+    "Latitude": 39.38207,
+    "Longitude": -84.54708,
+    "Name": "Hamilton, OH, Site",
+    "NameMnemonic": "HAO",
+    "StateCode": "OH",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/hamilton-ohio-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Hamilton Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -9411737.8936999999,
+    "y": 4776548.5291000009
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 23,
+    "ID": 23,
+    "TransferYear": 1997,
+    "Directory": "\\UT\\MexicanHatDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1872",
+    "ZoomLevel": 16,
+    "Latitude": 37.133607,
+    "Longitude": -109.874549,
+    "Name": "Mexican Hat, UT, Disposal Site",
+    "NameMnemonic": "HAT",
+    "StateCode": "UT",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/mexican-hat-utah-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 32044,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Mexican Hat Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430228000
+   },
+   "geometry": {
+    "x": -12231178.845800001,
+    "y": 4457746.2783999965
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 75,
+    "ID": 75,
+    "TransferYear": 2004,
+    "Directory": "\\MA\\IndianOrchard",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=2173",
+    "ZoomLevel": 14,
+    "Latitude": 42.15423,
+    "Longitude": -72.49972,
+    "Name": "Indian Orchard, MA, Site",
+    "NameMnemonic": "INO",
+    "StateCode": "MA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/indian-orchard-massachusetts-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Indian Orchard Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -8070631.9131000005,
+    "y": 5184110.4209000021
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 76,
+    "ID": 76,
+    "TransferYear": 1983,
+    "Directory": "\\NJ\\JerseyCity",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1405",
+    "ZoomLevel": 14,
+    "Latitude": 40.70906,
+    "Longitude": -74.10219,
+    "Name": "Jersey City, NJ, Site",
+    "NameMnemonic": "JEC",
+    "StateCode": "NJ",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/jersey-city-new-jersey-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Jersey City Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430709000
+   },
+   "geometry": {
+    "x": -8249018.0574999992,
+    "y": 4969522.3319000006
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 463,
+    "ID": 92,
+    "TransferYear": 2006,
+    "Directory": "\\CA\\LaboratoryforEnergy-RelatedHealthResearch",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=909",
+    "ZoomLevel": 14,
+    "Latitude": 38.519166,
+    "Longitude": -121.755111,
+    "Name": "Laboratory for Energy-Related Health Research, CA, Site",
+    "NameMnemonic": "LEH",
+    "StateCode": "CA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/laboratory-energy-related-health-research-lehr-california-site",
+    "RegulatoryDriver": "CERCLA/RCRA",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 102642,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Laboratory for Energy-Related Health Research Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430205000
+   },
+   "geometry": {
+    "x": -13553716.958000001,
+    "y": 4653028.4033999965
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 24,
+    "ID": 24,
+    "TransferYear": 1995,
+    "Directory": "\\OR\\LakeviewDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1776",
+    "ZoomLevel": 16,
+    "Latitude": 42.285784,
+    "Longitude": -120.433462,
+    "Name": "Lakeview, OR, Disposal Site",
+    "NameMnemonic": "LKD",
+    "StateCode": "OR",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/lakeview-oregon-disposalprocessing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Lakeview Disposal Site",
+    "LastUpdated": 1615331118000,
+    "LastRun": 1620430205000
+   },
+   "geometry": {
+    "x": -13406591.6643,
+    "y": 5203885.0983999968
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 25,
+    "ID": 25,
+    "TransferYear": 1995,
+    "Directory": "\\OR\\LakeviewProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1776",
+    "ZoomLevel": 15,
+    "Latitude": 42.21008,
+    "Longitude": -120.36367,
+    "Name": "Lakeview, OR, Processing Site",
+    "NameMnemonic": "LKP",
+    "StateCode": "OR",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/lakeview-oregon-disposalprocessing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Lakeview Processing Site",
+    "LastUpdated": 1615244724000,
+    "LastRun": 1620430203000
+   },
+   "geometry": {
+    "x": -13398822.454399999,
+    "y": 5192500.5406000018
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 26,
+    "ID": 26,
+    "TransferYear": 1994,
+    "Directory": "\\ID\\LowmanDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1203",
+    "ZoomLevel": 17,
+    "Latitude": 44.08479,
+    "Longitude": -115.606689,
+    "Name": "Lowman, ID, Disposal Site",
+    "NameMnemonic": "LOW",
+    "StateCode": "ID",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/lowman-idaho-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Lowman Disposal Site",
+    "LastUpdated": 1614639917000,
+    "LastRun": 1620430198000
+   },
+   "geometry": {
+    "x": -12869277.751800001,
+    "y": 5478573.0207000002
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 77,
+    "ID": 77,
+    "TransferYear": 2002,
+    "Directory": "\\IL\\Madison",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=2550",
+    "ZoomLevel": 14,
+    "Latitude": 38.68817,
+    "Longitude": -90.166642,
+    "Name": "Madison, IL, Site",
+    "NameMnemonic": "MAD",
+    "StateCode": "IL",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/madison-illinois-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": 102672,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Madison Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430707000
+   },
+   "geometry": {
+    "x": -10037304.674000001,
+    "y": 4677102.5217000023
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 27,
+    "ID": 27,
+    "TransferYear": 2010,
+    "Directory": "\\CO\\MaybellWestDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=6878",
+    "ZoomLevel": 16,
+    "Latitude": 40.544556,
+    "Longitude": -108.015615,
+    "Name": "Maybell West, CO, Disposal Site",
+    "NameMnemonic": "MAW",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/maybell-west-colorado-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title II",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 102653,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Maybell West Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430200000
+   },
+   "geometry": {
+    "x": -12024243.259500001,
+    "y": 4945394.1108999997
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 464,
+    "ID": 93,
+    "TransferYear": 2004,
+    "Directory": "\\KY\\MaxeyFlatsDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=6123",
+    "ZoomLevel": 14,
+    "Latitude": 38.25875,
+    "Longitude": -83.57,
+    "Name": "Maxey Flats, KY, Disposal Site",
+    "NameMnemonic": "MAX",
+    "StateCode": "KY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/maxey-flats-kentucky-disposal-site",
+    "RegulatoryDriver": "CERCLA/RCRA",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Maxey Flats Disposal Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430707000
+   },
+   "geometry": {
+    "x": -9302969.8455999997,
+    "y": 4616043.2713999972
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 28,
+    "ID": 28,
+    "TransferYear": 1999,
+    "Directory": "\\CO\\MaybellDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=977",
+    "ZoomLevel": 16,
+    "Latitude": 40.543859,
+    "Longitude": -107.99287,
+    "Name": "Maybell, CO, Disposal Site",
+    "NameMnemonic": "MAY",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/maybell-colorado-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 26753,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Maybell Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430200000
+   },
+   "geometry": {
+    "x": -12021711.297699999,
+    "y": 4945292.0063999966
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 29,
+    "ID": 29,
+    "TransferYear": 2012,
+    "Directory": "\\OH\\Mound",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=594",
+    "ZoomLevel": 15,
+    "Latitude": 39.627799,
+    "Longitude": -84.286025,
+    "Name": "Mound, OH, Site",
+    "NameMnemonic": "MND",
+    "StateCode": "OH",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/mound-ohio-site",
+    "RegulatoryDriver": "CERCLA/RCRA",
+    "MaintenanceCategory": "3",
+    "SiteCoordSysWkid": 3735,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Mound Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430671000
+   },
+   "geometry": {
+    "x": -9382677.3839999996,
+    "y": 4812001.5452999994
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 30,
+    "ID": 30,
+    "TransferYear": 2002,
+    "Directory": "\\UT\\MonticelloDisposalandProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/Monticello/Factsheet_-_Monticello.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 37.851103,
+    "Longitude": -109.325213,
+    "Name": "Monticello, UT, Disposal and Processing Sites",
+    "NameMnemonic": "MNT",
+    "StateCode": "UT",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/monticello-utah-disposal-and-processing-sites",
+    "RegulatoryDriver": "CERCLA/RCRA",
+    "MaintenanceCategory": "3",
+    "SiteCoordSysWkid": 6627,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Monticello Disposal and Processing Sites",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620428805000
+   },
+   "geometry": {
+    "x": -12170027.041999999,
+    "y": 4558412.9614999965
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 31,
+    "ID": 31,
+    "TransferYear": 1997,
+    "Directory": "\\AZ\\MonumentValleyProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=819",
+    "ZoomLevel": 16,
+    "Latitude": 36.931242,
+    "Longitude": -109.866515,
+    "Name": "Monument Valley, AZ, Processing Site",
+    "NameMnemonic": "MON",
+    "StateCode": "AZ",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/monument-valley-arizona-processing-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "PROJCS[\"AZMON - NAD_1983_2011_StatePlane_Arizona_East_FIPS_0201_Ft\",GEOGCS[\"GCS_NAD_1983_2011\",DATUM[\"D_NAD_1983_2011\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"False_Easting\",699998.6],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",-110.1666666666667],PARAMETER[\"Scale_Factor\",0.9999],PARAMETER[\"Latitude_Of_Origin\",31.0],UNIT[\"Foot_US\",0.3048006096012192]]",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Monument Valley Processing Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620429084000
+   },
+   "geometry": {
+    "x": -12230284.504999999,
+    "y": 4429527.1372999996
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 32,
+    "ID": 32,
+    "TransferYear": 1999,
+    "Directory": "\\CO\\NaturitaDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=981",
+    "ZoomLevel": 17,
+    "Latitude": 38.360283,
+    "Longitude": -108.75443,
+    "Name": "Naturita, CO, Disposal Site",
+    "NameMnemonic": "NAD",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/naturita-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 26755,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Naturita Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620428751000
+   },
+   "geometry": {
+    "x": -12106487.769099999,
+    "y": 4630447.4870999977
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 33,
+    "ID": 33,
+    "TransferYear": 1999,
+    "Directory": "\\CO\\NaturitaProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=981",
+    "ZoomLevel": 16,
+    "Latitude": 38.239805,
+    "Longitude": -108.611094,
+    "Name": "Naturita, CO, Processing Site",
+    "NameMnemonic": "NAP",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/naturita-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Naturita Processing Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620428750000
+   },
+   "geometry": {
+    "x": -12090531.6786,
+    "y": 4613357.8246000037
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 78,
+    "ID": 78,
+    "TransferYear": 1992,
+    "Directory": "\\NY\\NiagaraFallsStorageVicinityProperties",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=2226",
+    "ZoomLevel": 14,
+    "Latitude": 43.21992684,
+    "Longitude": -78.9732975,
+    "Name": "Niagara Falls Storage Site Vicinity Properties, NY, Site",
+    "NameMnemonic": "NFV",
+    "StateCode": "NY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/niagara-falls-storage-site-vicinity-properties-new-york-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Niagara Falls Storage Site Vicinity Properties Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -8791267.2640000004,
+    "y": 5345507.0909999982
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 79,
+    "ID": 79,
+    "TransferYear": 2001,
+    "Directory": "\\NJ\\NewBrunswick",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1448",
+    "ZoomLevel": 14,
+    "Latitude": 40.470348,
+    "Longitude": -74.476119,
+    "Name": "New Brunswick, NJ, Site",
+    "NameMnemonic": "NWB",
+    "StateCode": "NJ",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/new-brunswick-new-jersey-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 3424,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "New Brunswick Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -8290643.6433000006,
+    "y": 4934529.2356000021
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 80,
+    "ID": 80,
+    "TransferYear": 1996,
+    "Directory": "\\NY\\NewYork",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1608",
+    "ZoomLevel": 14,
+    "Latitude": 40.74649,
+    "Longitude": -74.00658,
+    "Name": "New York, NY, Site",
+    "NameMnemonic": "NYN",
+    "StateCode": "NY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/new-york-new-york-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "New York Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -8238374.8010000009,
+    "y": 4975020.6018999964
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 81,
+    "ID": 81,
+    "TransferYear": 1994,
+    "Directory": "\\TN\\OakRidgeWarehouses",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1847",
+    "ZoomLevel": 14,
+    "Latitude": 36.042608,
+    "Longitude": -84.207185,
+    "Name": "Oak Ridge, TN, Warehouses Site",
+    "NameMnemonic": "ORW",
+    "StateCode": "TN",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/oak-ridge-tennessee-warehouses-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Oak Ridge Warehouses Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -9373900.9552999996,
+    "y": 4306485.7520999983
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 82,
+    "ID": 82,
+    "TransferYear": 1997,
+    "Directory": "\\OH\\Oxford",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1735",
+    "ZoomLevel": 14,
+    "Latitude": 39.50375,
+    "Longitude": -84.743455,
+    "Name": "Oxford, OH, Site",
+    "NameMnemonic": "OXO",
+    "StateCode": "OH",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/oxford-ohio-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Oxford Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -9433598.2587000001,
+    "y": 4794088.4726999998
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 459,
+    "ID": 88,
+    "TransferYear": 2016,
+    "Directory": "\\OH\\Painesville",
+    "FactSheetUrl": "https://www.lm.doe.gov/Painesville/PainesvilleFactSheet.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 41.756445,
+    "Longitude": -81.236156,
+    "Name": "Painesville, OH, Site",
+    "NameMnemonic": "PAI",
+    "StateCode": "OH",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/painesville-ohio-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Painesville Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -9043167.5198999997,
+    "y": 5124565.6186999977
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 1267,
+    "ID": 102,
+    "TransferYear": 2019,
+    "Directory": "\\MT\\Pre-GondolaandTrencher",
+    "FactSheetUrl": "",
+    "ZoomLevel": 15,
+    "Latitude": 47.92821359,
+    "Longitude": -106.64924178,
+    "Name": "Pre-Gondola and Trencher, MT, Site",
+    "NameMnemonic": "PGD",
+    "StateCode": "MT",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/plowsharevela-uniform-program-sites",
+    "RegulatoryDriver": "PlowshareVelaUniform",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Pre-Gondola and Trencher Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430711000
+   },
+   "geometry": {
+    "x": -11872139.287900001,
+    "y": 6094920.431599997
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 34,
+    "ID": 34,
+    "TransferYear": 2004,
+    "Directory": "\\FL\\PinellasCounty",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1152",
+    "ZoomLevel": 16,
+    "Latitude": 27.874948,
+    "Longitude": -82.749012,
+    "Name": "Pinellas County, FL, Site",
+    "NameMnemonic": "PIN",
+    "StateCode": "FL",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/pinellas-county-florida-site",
+    "RegulatoryDriver": "CERCLA/RCRA",
+    "MaintenanceCategory": "3",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Pinellas County Site",
+    "LastUpdated": 1616454320000,
+    "LastRun": 1620430179000
+   },
+   "geometry": {
+    "x": -9211577.8794999998,
+    "y": 3233216.7221999988
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 35,
+    "ID": 35,
+    "TransferYear": 1998,
+    "Directory": "\\OH\\PiquaDecommissionedReactor",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1747",
+    "ZoomLevel": 18,
+    "Latitude": 40.1319,
+    "Longitude": -84.23462,
+    "Name": "Piqua, OH, Decommissioned Reactor Site",
+    "NameMnemonic": "PIQ",
+    "StateCode": "OH",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/piqua-ohio-decommissioned-reactor-site",
+    "RegulatoryDriver": "D&D",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 3735,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Piqua Decommissioned Reactor Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -9376955.0055999998,
+    "y": 4885128.1815000027
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 36,
+    "ID": 36,
+    "TransferYear": 1994,
+    "Directory": "\\WV\\ParkersburgDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1222",
+    "ZoomLevel": 18,
+    "Latitude": 39.250115,
+    "Longitude": -81.685817,
+    "Name": "Parkersburg, WV, Disposal Site",
+    "NameMnemonic": "PKB",
+    "StateCode": "WV",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/parkersburg-west-virginia-disposal-site",
+    "RegulatoryDriver": "NWPA",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Parkersburg Disposal Site",
+    "LastUpdated": 1618268714000,
+    "LastRun": 1620430672000
+   },
+   "geometry": {
+    "x": -9093223.5535000004,
+    "y": 4757561.9875999987
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 1266,
+    "ID": 101,
+    "TransferYear": 2019,
+    "Directory": "\\ID\\Pre-SchoonerII",
+    "FactSheetUrl": "",
+    "ZoomLevel": 17,
+    "Latitude": 42.40104084,
+    "Longitude": -115.57569587,
+    "Name": "Pre-Schooner II, ID, Site",
+    "NameMnemonic": "PSC",
+    "StateCode": "ID",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/plowsharevela-uniform-program-sites",
+    "RegulatoryDriver": "PlowshareVelaUniform",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Pre-Schooner II Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430711000
+   },
+   "geometry": {
+    "x": -12865827.612599999,
+    "y": 5221244.0148999989
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 37,
+    "ID": 37,
+    "TransferYear": 2008,
+    "Directory": "\\CO\\RioBlanco",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1006",
+    "ZoomLevel": 15,
+    "Latitude": 39.793245,
+    "Longitude": -108.367198,
+    "Name": "Rio Blanco, CO, Site",
+    "NameMnemonic": "RBL",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/rio-blanco-colorado-site",
+    "RegulatoryDriver": "Nevada Offsites",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 26753,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Rio Blanco Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430674000
+   },
+   "geometry": {
+    "x": -12063381.300099999,
+    "y": 4835942.5371000022
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 38,
+    "ID": 38,
+    "TransferYear": 1998,
+    "Directory": "\\CO\\RifleDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=995",
+    "ZoomLevel": 15,
+    "Latitude": 39.614434,
+    "Longitude": -107.801258,
+    "Name": "Rifle, CO, Disposal Site",
+    "NameMnemonic": "RFL",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/rifle-colorado-disposal-site-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Rifle Disposal Site",
+    "LastUpdated": 1609801515000,
+    "LastRun": 1620429284000
+   },
+   "geometry": {
+    "x": -12000381.147399999,
+    "y": 4810070.0549999997
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 39,
+    "ID": 39,
+    "TransferYear": 1998,
+    "Directory": "\\CO\\RifleNewProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=995",
+    "ZoomLevel": 16,
+    "Latitude": 39.524991,
+    "Longitude": -107.814042,
+    "Name": "Rifle New, CO, Processing Site",
+    "NameMnemonic": "RFN",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/rifle-colorado-disposal-site-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Rifle New Processing Site",
+    "LastUpdated": 1612307114000,
+    "LastRun": 1620429275000
+   },
+   "geometry": {
+    "x": -12001804.255800001,
+    "y": 4797153.4688000008
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 40,
+    "ID": 40,
+    "TransferYear": 1998,
+    "Directory": "\\CO\\RifleOldProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=995",
+    "ZoomLevel": 16,
+    "Latitude": 39.529479,
+    "Longitude": -107.771654,
+    "Name": "Rifle Old, CO, Processing Site",
+    "NameMnemonic": "RFO",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/rifle-colorado-disposal-site-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Rifle Old Processing Site",
+    "LastUpdated": 1612307114000,
+    "LastRun": 1620429283000
+   },
+   "geometry": {
+    "x": -11997085.645199999,
+    "y": 4797801.190200001
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 41,
+    "ID": 41,
+    "TransferYear": 2008,
+    "Directory": "\\CO\\RockyFlats",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=2963",
+    "ZoomLevel": 14,
+    "Latitude": 39.889868,
+    "Longitude": -105.209222,
+    "Name": "Rocky Flats, CO, Site",
+    "NameMnemonic": "RFS",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/rocky-flats-site-colorado",
+    "RegulatoryDriver": "CERCLA/RCRA",
+    "MaintenanceCategory": "3",
+    "SiteCoordSysWkid": 26754,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Rocky Flats Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620429046000
+   },
+   "geometry": {
+    "x": -11711837.0198,
+    "y": 4849951.0800999999
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 42,
+    "ID": 42,
+    "TransferYear": 2008,
+    "Directory": "\\CO\\Rulison",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1065",
+    "ZoomLevel": 16,
+    "Latitude": 39.405292,
+    "Longitude": -107.948499,
+    "Name": "Rulison, CO, Site",
+    "NameMnemonic": "RUL",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/rulison-colorado-site",
+    "RegulatoryDriver": "Nevada Offsites",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 26754,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Rulison Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430678000
+   },
+   "geometry": {
+    "x": -12016771.9406,
+    "y": 4779893.5722000003
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 43,
+    "ID": 43,
+    "TransferYear": 1991,
+    "Directory": "\\WY\\RivertonProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1216",
+    "ZoomLevel": 16,
+    "Latitude": 42.997679,
+    "Longitude": -108.410329,
+    "Name": "Riverton, WY, Processing Site",
+    "NameMnemonic": "RVT",
+    "StateCode": "WY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/riverton-wyoming-processing-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Riverton Processing Site",
+    "LastUpdated": 1608159914000,
+    "LastRun": 1620428745000
+   },
+   "geometry": {
+    "x": -12068182.620999999,
+    "y": 5311618.5737999976
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 44,
+    "ID": 44,
+    "TransferYear": 2008,
+    "Directory": "\\MS\\Salmon",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1325",
+    "ZoomLevel": 15,
+    "Latitude": 31.142285,
+    "Longitude": -89.570012,
+    "Name": "Salmon, MS, Site",
+    "NameMnemonic": "SAL",
+    "StateCode": "MS",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/salmon-mississippi-site",
+    "RegulatoryDriver": "Nevada Offsites",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 26794,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Salmon Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430699000
+   },
+   "geometry": {
+    "x": -9970888.1261999998,
+    "y": 3651241.3781000003
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 45,
+    "ID": 45,
+    "TransferYear": 1998,
+    "Directory": "\\IL\\SiteAPlotMDecommissionedReactor",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1279",
+    "ZoomLevel": 16,
+    "Latitude": 41.705321,
+    "Longitude": -87.910908,
+    "Name": "Site A / Plot M, IL, Decommissioned Reactor Site",
+    "NameMnemonic": "SAM",
+    "StateCode": "IL",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/site-aplot-m-illinois-decommissioned-reactor-site",
+    "RegulatoryDriver": "D&D",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 102671,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Site A / Plot M Decommissioned Reactor Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430707000
+   },
+   "geometry": {
+    "x": -9786197.5136999991,
+    "y": 5116939.6581000015
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 46,
+    "ID": 46,
+    "TransferYear": 2005,
+    "Directory": "\\WY\\ShirleyBasinSouthDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1212",
+    "ZoomLevel": 14,
+    "Latitude": 42.335323,
+    "Longitude": -106.196273,
+    "Name": "Shirley Basin South, WY, Disposal Site",
+    "NameMnemonic": "SBS",
+    "StateCode": "WY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/shirley-basin-south-wyoming-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title II",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Shirley Basin South Disposal Site",
+    "LastUpdated": 1618527916000,
+    "LastRun": 1620430195000
+   },
+   "geometry": {
+    "x": -11821715.034499999,
+    "y": 5211342.3042000011
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 83,
+    "ID": 83,
+    "TransferYear": 1995,
+    "Directory": "\\CT\\Seymour",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1143",
+    "ZoomLevel": 14,
+    "Latitude": 41.39823,
+    "Longitude": -73.073137,
+    "Name": "Seymour, CT, Site",
+    "NameMnemonic": "SCT",
+    "StateCode": "CT",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/seymour-connecticut-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Seymour Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -8134464.4014999997,
+    "y": 5071259.1398999989
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 47,
+    "ID": 47,
+    "TransferYear": 2001,
+    "Directory": "\\WA\\SherwoodDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1226",
+    "ZoomLevel": 15,
+    "Latitude": 47.876183,
+    "Longitude": -118.106188,
+    "Name": "Sherwood, WA, Disposal Site",
+    "NameMnemonic": "SHE",
+    "StateCode": "WA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/sherwood-washington-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title II",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Sherwood Disposal Site",
+    "LastUpdated": 1612825516000,
+    "LastRun": 1620430196000
+   },
+   "geometry": {
+    "x": -13147520.707699999,
+    "y": 6086280.7613999993
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 48,
+    "ID": 48,
+    "TransferYear": 2008,
+    "Directory": "\\NV\\Shoal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1379",
+    "ZoomLevel": 14,
+    "Latitude": 39.200093,
+    "Longitude": -118.381229,
+    "Name": "Shoal, NV, Site",
+    "NameMnemonic": "SHL",
+    "StateCode": "NV",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/shoal-nevada-site",
+    "RegulatoryDriver": "Nevada Offsites",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 32009,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Shoal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430198000
+   },
+   "geometry": {
+    "x": -13178138.1318,
+    "y": 4750373.8404000029
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 49,
+    "ID": 49,
+    "TransferYear": 1996,
+    "Directory": "\\NM\\ShiprockDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1527",
+    "ZoomLevel": 16,
+    "Latitude": 36.770014,
+    "Longitude": -108.684297,
+    "Name": "Shiprock, NM, Disposal Site",
+    "NameMnemonic": "SHP",
+    "StateCode": "NM",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/shiprock-new-mexico-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "3",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Shiprock Disposal Site",
+    "LastUpdated": 1617059120000,
+    "LastRun": 1620429117000
+   },
+   "geometry": {
+    "x": -12098680.599300001,
+    "y": 4407098.0041999966
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 50,
+    "ID": 50,
+    "TransferYear": 1997,
+    "Directory": "\\UT\\SaltLakeCityDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/Salt_Lake/Fact_Sheet_SLC_Processing_and_Disposal_Sites.pdf",
+    "ZoomLevel": 15,
+    "Latitude": 40.690666,
+    "Longitude": -113.111437,
+    "Name": "Salt Lake City, UT, Disposal Site",
+    "NameMnemonic": "SLD",
+    "StateCode": "UT",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/salt-lake-city-utah-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Salt Lake City Disposal Site",
+    "LastUpdated": 1620083113000,
+    "LastRun": 1620430192000
+   },
+   "geometry": {
+    "x": -12591507.569699999,
+    "y": 4966821.4826000035
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 51,
+    "ID": 51,
+    "TransferYear": 1997,
+    "Directory": "\\UT\\SaltLakeCityProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/Salt_Lake/Fact_Sheet_SLC_Processing_and_Disposal_Sites.pdf",
+    "ZoomLevel": 16,
+    "Latitude": 40.702191,
+    "Longitude": -111.911462,
+    "Name": "Salt Lake City, UT, Processing Site",
+    "NameMnemonic": "SLP",
+    "StateCode": "UT",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/salt-lake-city-utah-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Salt Lake City Processing Site",
+    "LastUpdated": 1620083113000,
+    "LastRun": 1620430192000
+   },
+   "geometry": {
+    "x": -12457926.9638,
+    "y": 4968513.6476000026
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 52,
+    "ID": 52,
+    "TransferYear": 1993,
+    "Directory": "\\WY\\SpookDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1206",
+    "ZoomLevel": 16,
+    "Latitude": 43.238852,
+    "Longitude": -105.622524,
+    "Name": "Spook, WY, Disposal Site",
+    "NameMnemonic": "SPK",
+    "StateCode": "WY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/spook-wyoming-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Spook Disposal Site",
+    "LastUpdated": 1618268714000,
+    "LastRun": 1620430193000
+   },
+   "geometry": {
+    "x": -11757845.588,
+    "y": 5348398.5113999993
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 84,
+    "ID": 84,
+    "TransferYear": 1996,
+    "Directory": "\\PA\\Springdale",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1814",
+    "ZoomLevel": 14,
+    "Latitude": 40.537774,
+    "Longitude": -79.782012,
+    "Name": "Springdale, PA, Site",
+    "NameMnemonic": "SPP",
+    "StateCode": "PA",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/springdale-pennsylvania-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Springdale Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -8881292.9503000006,
+    "y": 4944400.6513999999
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 53,
+    "ID": 53,
+    "TransferYear": 1998,
+    "Directory": "\\CO\\SlickRockDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1100",
+    "ZoomLevel": 16,
+    "Latitude": 38.054538,
+    "Longitude": -108.864253,
+    "Name": "Slick Rock, CO, Disposal Site",
+    "NameMnemonic": "SRD",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/slick-rock-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Slick Rock Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430210000
+   },
+   "geometry": {
+    "x": -12118713.2096,
+    "y": 4587133.0705000013
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 54,
+    "ID": 54,
+    "TransferYear": 1998,
+    "Directory": "\\CO\\SlickRockEastProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1100",
+    "ZoomLevel": 16,
+    "Latitude": 38.043158,
+    "Longitude": -108.894528,
+    "Name": "Slick Rock East, CO, Processing Site",
+    "NameMnemonic": "SRE",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/slick-rock-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 26755,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Slick Rock East Processing Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430215000
+   },
+   "geometry": {
+    "x": -12122083.407099999,
+    "y": 4585524.3861000016
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 55,
+    "ID": 55,
+    "TransferYear": 1998,
+    "Directory": "\\CO\\SlickRockWestProcessing",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1100",
+    "ZoomLevel": 16,
+    "Latitude": 38.045816,
+    "Longitude": -108.909424,
+    "Name": "Slick Rock West, CO, Processing Site",
+    "NameMnemonic": "SRW",
+    "StateCode": "CO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/slick-rock-colorado-disposal-and-processing-sites",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": 6318,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Slick Rock West Processing Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430213000
+   },
+   "geometry": {
+    "x": -12123741.622299999,
+    "y": 4585900.1004000008
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 85,
+    "ID": 85,
+    "TransferYear": 2001,
+    "Directory": "\\OH\\Toledo",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1750",
+    "ZoomLevel": 14,
+    "Latitude": 41.672238,
+    "Longitude": -83.568668,
+    "Name": "Toledo, OH, Site",
+    "NameMnemonic": "TLO",
+    "StateCode": "OH",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/toledo-ohio-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Toledo Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -9302821.568,
+    "y": 5112008.0319000036
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 86,
+    "ID": 86,
+    "TransferYear": 2009,
+    "Directory": "\\NY\\TonawandaNorthUnit1",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=2256",
+    "ZoomLevel": 14,
+    "Latitude": 42.992981,
+    "Longitude": -78.920112,
+    "Name": "Tonawanda North, NY, Site Unit 1",
+    "NameMnemonic": "TN1",
+    "StateCode": "NY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/tonawanda-north-new-york-site-unit-1",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Tonawanda North Site Unit 1",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -8785346.6811999995,
+    "y": 5310903.5446000025
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 87,
+    "ID": 87,
+    "TransferYear": 2009,
+    "Directory": "\\NY\\TonawandaNorthUnit2",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=2256",
+    "ZoomLevel": 14,
+    "Latitude": 42.998275,
+    "Longitude": -78.915436,
+    "Name": "Tonawanda North, NY, Site Unit 2",
+    "NameMnemonic": "TN2",
+    "StateCode": "NY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/tonawanda-north-new-york-site-unit-2",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Tonawanda North Site Unit 2",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430708000
+   },
+   "geometry": {
+    "x": -8784826.1512000002,
+    "y": 5311709.2880000025
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 460,
+    "ID": 89,
+    "TransferYear": 2017,
+    "Directory": "\\NY\\Tonawanda",
+    "FactSheetUrl": "https://www.lm.doe.gov/Tonawanda/TonawandaFactSheet.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 42.97665,
+    "Longitude": -78.89375,
+    "Name": "Tonawanda, NY, Site",
+    "NameMnemonic": "TON",
+    "StateCode": "NY",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/tonawanda-new-york-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Tonawanda Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430710000
+   },
+   "geometry": {
+    "x": -8782412.0767999999,
+    "y": 5308418.4139000028
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 1670,
+    "ID": 106,
+    "TransferYear": 2020,
+    "Directory": "\\NV\\TonopahTestRange",
+    "FactSheetUrl": "https://www.energy.gov/sites/prod/files/2020/09/f79/TonopahTestRangeFactSheet.pdf",
+    "ZoomLevel": 11,
+    "Latitude": 37.886032,
+    "Longitude": -116.762188,
+    "Name": "Tonopah Test Range, NV, Site",
+    "NameMnemonic": "TTR",
+    "StateCode": "NV",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/tonopah-test-range-nevada-site",
+    "RegulatoryDriver": "Nevada Offsites",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Tonopah Test Range Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430711000
+   },
+   "geometry": {
+    "x": -12997907.312100001,
+    "y": 4563338.443400003
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 56,
+    "ID": 56,
+    "TransferYear": 1996,
+    "Directory": "\\AZ\\TubaCityDisposal",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=849",
+    "ZoomLevel": 16,
+    "Latitude": 36.145483,
+    "Longitude": -111.134793,
+    "Name": "Tuba City, AZ, Disposal Site",
+    "NameMnemonic": "TUB",
+    "StateCode": "AZ",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/tuba-city-arizona-disposal-site",
+    "RegulatoryDriver": "UMTRCA Title I",
+    "MaintenanceCategory": "3",
+    "SiteCoordSysWkid": 26749,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Tuba City Disposal Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620429076000
+   },
+   "geometry": {
+    "x": -12371468.566199999,
+    "y": 4320658.1177000031
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 1268,
+    "ID": 103,
+    "TransferYear": 2019,
+    "Directory": "\\UT\\Utah",
+    "FactSheetUrl": "",
+    "ZoomLevel": 18,
+    "Latitude": 39.98549651,
+    "Longitude": -109.61155183,
+    "Name": "Utah, UT, Site",
+    "NameMnemonic": "UTA",
+    "StateCode": "UT",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/plowsharevela-uniform-program-sites",
+    "RegulatoryDriver": "PlowshareVelaUniform",
+    "MaintenanceCategory": "2",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Utah Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430711000
+   },
+   "geometry": {
+    "x": -12201902.134300001,
+    "y": 4863834.8963000029
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 57,
+    "ID": 57,
+    "TransferYear": 2003,
+    "Directory": "\\MO\\WeldonSpring",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=1347",
+    "ZoomLevel": 13,
+    "Latitude": 38.698168,
+    "Longitude": -90.728274,
+    "Name": "Weldon Spring, MO, Site",
+    "NameMnemonic": "WEL",
+    "StateCode": "MO",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/weldon-spring-missouri-site",
+    "RegulatoryDriver": "CERCLA/RCRA",
+    "MaintenanceCategory": "3",
+    "SiteCoordSysWkid": 102696,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Weldon Spring Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620429261000
+   },
+   "geometry": {
+    "x": -10099825.2622,
+    "y": 4678528.4861000031
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 461,
+    "ID": 90,
+    "TransferYear": 2019,
+    "Directory": "\\CT\\Windsor",
+    "FactSheetUrl": "https://www.lm.doe.gov/Windsor/Windsor_Fact_Sheet.pdf",
+    "ZoomLevel": 14,
+    "Latitude": 41.880214,
+    "Longitude": -72.71927,
+    "Name": "Windsor, CT, Site",
+    "NameMnemonic": "WIN",
+    "StateCode": "CT",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/windsor-connecticut-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": -1,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Windsor Site",
+    "LastUpdated": 1620428720000,
+    "LastRun": 1620430710000
+   },
+   "geometry": {
+    "x": -8095072.1073000003,
+    "y": 5143052.9365999997
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 58,
+    "ID": 58,
+    "TransferYear": 2007,
+    "Directory": "\\NJ\\Wayne",
+    "FactSheetUrl": "https://www.lm.doe.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=2606",
+    "ZoomLevel": 18,
+    "Latitude": 40.96981,
+    "Longitude": -74.27027,
+    "Name": "Wayne, NJ, Site",
+    "NameMnemonic": "WYN",
+    "StateCode": "NJ",
+    "PublicWebpageUrl": "https://www.energy.gov/lm/wayne-new-jersey-site",
+    "RegulatoryDriver": "FUSRAP",
+    "MaintenanceCategory": "1",
+    "SiteCoordSysWkid": 32011,
+    "SiteCoordSysWkt": "",
+    "AvailableOnWeb": "Y",
+    "ShortName": "Wayne Site",
+    "LastUpdated": 1603926315000,
+    "LastRun": 1620430675000
+   },
+   "geometry": {
+    "x": -8267728.6374999993,
+    "y": 5007889.6651000008
+   }
+  }
+ ]
+}
