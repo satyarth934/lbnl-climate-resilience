@@ -1,6 +1,7 @@
 import sys
 sys.dont_write_bytecode = True
 
+import os
 import pandas as pd
 import numpy as np
 import scipy 
@@ -8,131 +9,311 @@ from scipy import stats
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
+from typing import List
 
-def calculate_Nth_percentile(sites, scenarios, variables, N=99):
-    """ Calculates the Nth percentile and stores it as a new CSV file.
-    Default value for N is 99.
+
+def calculate_Nth_percentile(
+    sites: pd.DataFrame, 
+    scenarios: List[str], 
+    variables: List[str], 
+    datadir: str, 
+    N: int=99,
+) -> None:
+    """Calculates the Nth percentile.
+    
+    Args:
+        sites (pd.DataFrame): Data Frame containing all the site information. 
+        scenarios (List[str]):  Scenarios of interest.
+        variables (List[str]):  Variables of interest.
+        datadir (str): Parent directory containing all the data files.
+            The generated output file is also stored here.
+        N (int): Nth percentile will be calculated.
+    
+    Returns:
+        pd.DataFrame: The output DataFrame that is written to a csv file is also returned.
+        
+    Raises:
+        ValueError: If the integer value of N is outside the range [0, 100].
     """
-    var = 'tasmax'
     
-    array = []
-    for name, state in zip(sites.NameMnemonic,sites.StateCode):
-        array_ind = [name, state]
+    # Verify the value of N
+    if N < 0 or N > 100:
+        raise ValueError("Incorrect value for N. N must be between 0 and 100.")
+    
+    # Declare variables that will be used to convert the processed data to a DataFrame
+    df_array = []
+    df_colnames = []
+    
+    # Loop over all the sites. 
+    # ID and Object ID are stored only to inspect the final result with the corresponding site
+    for _oid, _id, name, state in zip(sites.OBJECTID, sites.ID, sites.NameMnemonic, sites.StateCode):
+        array_ind = [_oid, _id, name, state]
+        df_colnames = ["OBJECTID", "ID", "Name", "State"]
         
+        # Iterate over all combinations of variables and scenarios
         for sce in scenarios:
-            csv_path = os.path.join(datadir, f"{sce}_{var}_ensemble", f"{name}_{state}_{sce}_{var}.csv")
-            df = pd.read_csv(csv_path)
-            
-            df1 = df.set_index('date')
-            
-            mean_val = np.percentile(df1['mean'], N)  
-            array_ind.append(mean_val)   
+            for var in variables:
+                # TODO: Should these filenames be something else? 
+                # These do not match the download script filenaming format.
+                csv_path = os.path.join(datadir, 
+                                        f"{sce}_{var}_ensemble", 
+                                        f"{name}_{state}_{sce}_{var}.csv")
+                
+                if not os.path.exists(csv_path):
+                    print(f"WARNING: {csv_path} does not exist. Continuing to the next file.")
+                    continue
+                
+                # Preprocessing step
+                df = pd.read_csv(csv_path)
+                df1 = df.set_index('date')
+                
+                mean_val = np.percentile(df1['mean'], N)  
+                
+                # Update the column names
+                colname = f"{sce}_{var}_percentile"
+                if colname not in df_colnames:
+                    df_colnames.append(colname)
+                
+                # Store the row information
+                array_ind.append(mean_val)
         
-        array.append(array_ind)
+        # Store the row for conversion to DataFrame
+        df_array.append(array_ind)
     
-    df_pr = pd.DataFrame(array)
-    df_pr.columns = ['Name','State','historical', 'rcp45', 'rcp85']
+    # Convert the generated data to a DataFrame
+    df_pr = pd.DataFrame(df_array)
+    df_pr.columns = df_colnames
     
-    df_pr = pd.concat((sites, df_pr), axis=1)
+    # Merge the generated data with the original Data Frame
+    df_pr = pd.merge(sites, df_pr, 
+                     how="inner", 
+                     left_on=["OBJECTID", "ID"], 
+                     right_on=["OBJECTID", "ID"],
+                    )
     
     # Write to CSV
-    output_csv_path = os.path.join(datadir, f"LMsites_tasmax_{N}th.csv")
+    output_csv_path = os.path.join(datadir, f"LMsites_{N}th_percentile.csv")
     df_pr.to_csv(output_csv_path)
+    print(f"STATUS UPDATE: The output file generated from calculate_Nth_percentile() function is stored as {output_csv_path}.")
+    
+    return df_pr
+    
 
-
-def calculate_pr_count_amount(sites, scenarios, variables):
-    """Calculates pr count and amount.
+def calculate_pr_count_amount(
+    sites: pd.DataFrame, 
+    scenarios: List[str], 
+    variables: List[str], 
+    datadir: str, 
+    df_pr_csv_path: str
+) -> None:
+    """Calculates precipitation count and amount.
+    
+    Args:
+        sites (pd.DataFrame): Data Frame containing all the site information. 
+        scenarios (List[str]): Scenarios of interest.
+        variables (List[str]): Variables of interest.
+        datadir (str): Parent directory containing all the data files.
+            The generated output file is also stored here.
+        df_pr_csv_path (str): This data frame can be generated using the calculate_Nth_percentile() function.
+            The csv file generated from this function is passed here as argument.
+    
+    Returns:
+        pd.DataFrame: The output DataFrame that is written to a csv file is also returned.
+    
+    Raises:
+        KeyError: This error is raised if the correct historical column does not 
+            exist in the df_pr data frame that is mentioned in df_pr_csv_path.
     """
-    var = 'tasmax'
     
     nyr_hist = 56    # QUESTION: fixed values or random values for experiment?
     nyr_proj = 93    # QUESTION: fixed values or random values for experiment?
     
-    array = []
+    # df_pr is required to calculate counts and amounts greater than 'historical' values
+    df_pr = pd.read_csv(df_pr_csv_path)
+    
+    # Declare variables that will be used to convert the processed data to a DataFrame
+    df_array = []
+    df_colnames = []
+    
+    # Loop over all the sites. 
+    # ID and Object ID are stored only to inspect the final result with the corresponding site
     i=0
-    for name, state in zip(sites.NameMnemonic,sites.StateCode):
-        array_ind = [name, state]
+    for _oid, _id, name, state in zip(sites.OBJECTID, sites.ID, sites.NameMnemonic, sites.StateCode):
+        array_ind = [_oid, _id, name, state]
+        df_colnames = ["OBJECTID", "ID", "Name", "State"]
+        
+        # Iterate over all combinations of variables and scenarios
         for sce in scenarios:
-            csv_path = os.path.join(datadir, f"{sce}_{var}_ensemble", f"{name}_{state}_{sce}_{var}.csv")
-            df = pd.read_csv(csv_path)
-            df1 = df.set_index('date')
+            for var in variables:
+                # Verify if the column required for counts and amounts calculation is present in the df_pr DataFrame.
+                historical_col_name = f"historical_{var}_percentile"
+                if historical_col_name not in df_pr:
+                    raise KeyError(f"{historical_col_name} column does not exist in the percentile data frame. Check the df_pr_csv_path argument.")
+                
+                # TODO: Should these filenames be something else? 
+                # These do not match the download script filenaming format.
+                csv_path = os.path.join(datadir, 
+                                        f"{sce}_{var}_ensemble", 
+                                        f"{name}_{state}_{sce}_{var}.csv")
+                
+                if not os.path.exists(csv_path):
+                    print(f"WARNING: {csv_path} does not exist. Continuing to the next file.")
+                    continue
+                
+                # Preprocessing step
+                df = pd.read_csv(csv_path)
+                df1 = df.set_index('date')
 
-            div_const = nyr_hist if sce == "historical" else nyr_proj
-            count = np.count_nonzero(df1['mean'] > df_pr['historical'].iloc[i]) / div_const
-            amount = np.mean(df1[df1['mean'] > df_pr['historical'].iloc[i]]['mean']) / div_const
-            
-            array_ind.append(count)
-            array_ind.append(amount)
-            
-        array.append(array_ind)
+                div_const = nyr_hist if sce == "historical" else nyr_proj
+                count = np.count_nonzero(df1['mean'] > df_pr[historical_col_name].iloc[i]) / div_const
+                amount = np.mean(df1[df1['mean'] > df_pr[historical_col_name].iloc[i]]['mean']) / div_const
+
+                # Update the column names and store the row information
+                colname = f"{sce}_{var}_counts"
+                if colname not in df_colnames:
+                    df_colnames.append(colname)
+                array_ind.append(count)
+                
+                colname = f"{sce}_{var}_amount"
+                if colname not in df_colnames:
+                    df_colnames.append(colname)
+                array_ind.append(amount)
+        
+        # Store the row for conversion to DataFrame
+        df_array.append(array_ind)
         i+=1
 
-    # Convert to DataFrame
-    df_pr_counts_amounts = pd.DataFrame(array)
-    df_pr_counts_amounts.columns = ['Name','State','historical_counts','historical_amount', 'rcp45_counts', 'rcp45_amount', 'rcp85_counts', 'rcp85_amount']
-    df_pr_counts_amounts = pd.concat((sites, df_pr_counts_amounts), axis = 1)
+    # Convert the generated data to a DataFrame
+    df_pr_counts_amounts = pd.DataFrame(df_array)
+    df_pr_counts_amounts.columns = df_colnames
+    
+    # Merge the generated data with the original Data Frame
+    df_pr = pd.merge(sites, df_pr_counts_amounts, 
+                     how="inner", 
+                     left_on=["OBJECTID", "ID"], 
+                     right_on=["OBJECTID", "ID"],
+                    )
     
     # Write to CSV
-    output_csv_path = os.path.join(datadir, "LMsites_tasmax_counts_amounts.csv")
-    df_pr_counts_amounts.to_csv(os.path.join(datadir, "LMsites_tasmax_counts_amounts.csv"))
-
+    output_csv_path = os.path.join(datadir, "LMsites_counts_amounts.csv")
+    df_pr_counts_amounts.to_csv(output_csv_path)
+    print(f"STATUS UPDATE: The output file generated from calculate_pr_count_amount() function is stored as {output_csv_path}.")    
     
-def calculate_temporal_mean(sites, scenarios, variables):
-    """Calculates mean between temporal ranges.
+    return df_pr_counts_amounts
+    
+
+def calculate_temporal_mean(
+    sites: pd.DataFrame, 
+    scenarios: List[str], 
+    variables: List[str], 
+    datadir: str, 
+    start_date: str, 
+    end_date: str
+) -> None:
+        
+    """Calculates mean precipitation for the 'historical' scenario or 
+    between the start_date and the end_date.
+    
+    Args:
+        sites (pd.DataFrame): Data Frame containing all the site information. 
+        scenarios (List[str]): Scenarios of interest.
+        variables (List[str]): Variables of interest.
+        datadir (str): Parent directory containing all the data files.
+            The generated output file is also stored here.
+        start_date (str): Must be in the format 'YYYY-MM' or 'YYYY-MM-DD'.
+        end_date (str): Must be in the format 'YYYY-MM' or 'YYYY-MM-DD'.
+    
+    Returns:
+        pd.DataFrame: The output DataFrame that is written to a csv file is also returned.
+        
     """
-    var = 'tasmax'
-    
-    array = []
 
-    for name, state in zip(sites.NameMnemonic,sites.StateCode):
-        array_ind = [name, state]
+    # Declare variables that will be used to convert the processed data to a DataFrame
+    df_array = []
+    df_colnames = []
 
+    # Loop over all the sites. 
+    # ID and Object ID are stored only to inspect the final result with the corresponding site
+    for _oid, _id, name, state in zip(sites.OBJECTID, sites.ID, sites.NameMnemonic, sites.StateCode):
+        array_ind = [_oid, _id, name, state]
+        df_colnames = ["OBJECTID", "ID", "Name", "State"]
+
+        # Iterate over all combinations of variables and scenarios
         for sce in scenarios:
-            df = pd.read_csv(datadir + sce + '_' + var  + '_ensemble/' + name + '_' + state + '_' + sce + '_' + var + '.csv')
+            for var in variables:
+                # TODO: Should these filenames be something else? 
+                # These do not match the download script filenaming format.
+                csv_path = os.path.join(datadir, 
+                                        f"{sce}_{var}_ensemble", 
+                                        f"{name}_{state}_{sce}_{var}.csv")
+                
+                if not os.path.exists(csv_path):
+                    print(f"WARNING: {csv_path} does not exist. Continuing to the next file.")
+                    continue
+                
+                # Preprocessing step
+                df = pd.read_csv(csv_path)
+                df1 = df.set_index('date')
+                
+                # 'historial' scenario dates from 1950 to 2006.
+                if sce != 'historical':
+                    c0 = df1.index.to_series().between(start_date, end_date)
+                    df2 = df1[c0]
+                    mean_val = np.mean(df2['mean'])  
+                    
+                    # Generate column names
+                    colname = f"{start_date}_{end_date}_{var}_mean"
 
-            df1 = df.set_index('date')
-
-            if sce != 'historical':
-                c0 = df1.index.to_series().between('2020-01', '2059-12')
-                df2 = df1[c0]
-                c1 = df1.index.to_series().between('2060-01', '2099-12')
-                df3 = df1[c1]
-
-                mean_val1 = np.mean(df2['mean'])  
-                array_ind.append(mean_val1)   
-                mean_val2 = np.mean(df3['mean'])
-                array_ind.append(mean_val2)
-
-            else:
-                mean_val = np.mean(df1['mean'])  
+                else:
+                    mean_val = np.mean(df1['mean'])
+                    
+                    # Generate column names
+                    colname = f"{sce}_{var}_mean"
+                
+                # Update the column names
+                if colname not in df_colnames:
+                    df_colnames.append(colname)
+                
+                # Store the row information
                 array_ind.append(mean_val)
 
-        array.append(array_ind)
+        # Store the row for conversion to DataFrame
+        df_array.append(array_ind)
 
-    df_pr = pd.DataFrame(array)
-    df_pr.columns = ["Name", "State", "historical", "rcp45_near", "rcp45_far", "rcp85_near", "rcp85_far"]
-
-    df_pr = pd.concat((sites, df_pr), axis=1)
-    df_pr.to_csv(datadir+'LMsites_tasmax_99th_seg.csv')
-
-
-def main():
-    datadir = "."
-    lmsites_path = os.path.join(datadir, "LMsites.csv")
-    sites  = pd.read_csv(lmsites_path)
+    # Convert the generated data to a DataFrame
+    df_pr = pd.DataFrame(df_array)
+    df_pr.columns = df_colnames
     
-    variables  = ['tasmax']
-    scenarios = ['historical', 'rcp45', 'rcp85']
+    # Merge the generated data with the original Data Frame
+    df_pr = pd.merge(sites, df_pr, 
+                     how="inner", 
+                     left_on=["OBJECTID", "ID"], 
+                     right_on=["OBJECTID", "ID"],
+                    )
+
+    # Write to CSV
+    output_csv_path = os.path.join(datadir, "LMsites_seg.csv")
+    df_pr.to_csv(output_csv_path)
+    print(f"STATUS UPDATE: The output file generated from calculate_temporal_mean() function is stored as {output_csv_path}.")    
     
-    # Calculate 99th percentile
-    calculate_Nth_percentile()
-    
-    # Calculate pr count and amount
-    calculate_pr_count_amount()
-    
-    # Calculate temporal mean
-    calculate_temporal_mean()
+    return df_pr
 
 
-if __name__ == "__main__":
-    main()
+############################
+# NOTES
+############################
+"""
+Questions:
+1. Is the sites csv file expected to be on local drive?
+2. Are the downloaded csv files expected to by on the local drive as well?
+3. Is it assumed that the data will be downloaded locally from drive? - [My guess: YES]
+4. Where is the "*_ensemble*" file downloaded from?
+5. The variable nyr_hist and nyr_proj, are the supposed to have a fixed value or are they experimental?
+6. Confirm if ObjectID and ID are good unique identifiers for each row.
+
+Tasks:
+1. Do not worry about drive or local file downloads.
+    It is for the user to worry about. 
+    Just the function would be from the library that can be used either in colab for drive files or on local machine.
+    The directory path would work the same for both the cases.
+"""
