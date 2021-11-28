@@ -23,7 +23,14 @@ import constants as c
 
 
 class SitesDownloader:
-    def __init__(self, folder, site_json_file_path):
+    def __init__(self, folder: str, site_json_file_path: str) -> None:
+        """Initializes the SitesDownloader object.
+        
+        Args:
+            folder (str): Prefix of the output folder on google drive.
+            site_json_file_path (str): Path to the json file containing the 
+                site information for downloading data.
+        """
         
         self.folder = folder
         

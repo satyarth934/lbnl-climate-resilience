@@ -1,8 +1,10 @@
+# List of values
 variables:
 - "tasmin"
 - "tasmax"
 - "pr"
 
+# List of values
 models:
 - "ACCESS1-0" 
 - "bcc-csm1-1" 
@@ -26,6 +28,7 @@ models:
 # - "MRI-CGCM3" 
 # - "NorESM1-M"
 
+# List of values
 scenario_future: 
 - "rcp26"
 - "rcp45"
