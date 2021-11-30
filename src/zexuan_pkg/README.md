@@ -55,7 +55,15 @@ Write tutorial about how to do this.
 
 
 
-# Following is the expected directory structure for the preprocessing code:
+
+# Preprocessing Functions:
+1. calculate_Nth_percentile()
+2. calculate_pr_count_amount()
+3. calculate_temporal_mean()
+4. * get_climate_ensemble() 
+    There are some flaws in the function. Calculating std is not possible.
+
+# Following is the expected directory structure for functions 1, 2, and 3 in the preprocessing code:
 datadir
 ├── scenario1_variable1_ensemble
 │   ├── name1_state1_scenario1_variable1.csv

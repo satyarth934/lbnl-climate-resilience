@@ -13,7 +13,7 @@ import preprocess as pp
 
 
 def main():
-    datadir = "."
+    datadir = "/global/scratch/satyarth/Projects/lbnl-zexuan-code/data"
     lmsites_csv_path = os.path.join(datadir, "LMsites.csv")
     sites = pd.read_csv(lmsites_csv_path)
 
@@ -28,6 +28,10 @@ def main():
     end_date = "2059-12-09"
     pp.calculate_temporal_mean(sites, scenarios, variables, datadir, start_date, end_date)
 
+    scenarios = ["historical"]
+    variables = ["pr"]    
+    pp.get_climate_ensemble(sites, scenarios, variables, datadir)
+    
 
 if __name__ == "__main__":
     main()
