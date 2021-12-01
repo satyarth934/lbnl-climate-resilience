@@ -7,8 +7,12 @@ import datetime
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-
 from typing import List
+
+import utils
+
+import warnings
+warnings.formatwarning = utils.warning_format
 
 
 def calculate_Nth_percentile(
@@ -47,7 +51,7 @@ def calculate_Nth_percentile(
     # ID and Object ID are stored only to inspect the final result with the corresponding site
     for _oid, _id, name, state in zip(sites.OBJECTID, sites.ID, sites.NameMnemonic, sites.StateCode):
         array_ind = [_oid, _id, name, state]
-        df_colnames = ["OBJECTID", "ID", "Name", "State"]
+        df_colnames = ["OBJECTID", "ID", "NameMnemonic", "StateCode"]
         
         # Iterate over all combinations of variables and scenarios
         for sce in scenarios:
@@ -88,6 +92,7 @@ def calculate_Nth_percentile(
                      how="inner", 
                      left_on=["OBJECTID", "ID"], 
                      right_on=["OBJECTID", "ID"],
+                     suffixes=(None, "_copy"),
                     )
     
     # Write to CSV
@@ -139,7 +144,7 @@ def calculate_pr_count_amount(
     i=0
     for _oid, _id, name, state in zip(sites.OBJECTID, sites.ID, sites.NameMnemonic, sites.StateCode):
         array_ind = [_oid, _id, name, state]
-        df_colnames = ["OBJECTID", "ID", "Name", "State"]
+        df_colnames = ["OBJECTID", "ID", "NameMnemonic", "StateCode"]
         
         # Iterate over all combinations of variables and scenarios
         for sce in scenarios:
@@ -191,6 +196,7 @@ def calculate_pr_count_amount(
                      how="inner", 
                      left_on=["OBJECTID", "ID"], 
                      right_on=["OBJECTID", "ID"],
+                     suffixes=(None, "_copy"),
                     )
     
     # Write to CSV
@@ -235,7 +241,7 @@ def calculate_temporal_mean(
     # ID and Object ID are stored only to inspect the final result with the corresponding site
     for _oid, _id, name, state in zip(sites.OBJECTID, sites.ID, sites.NameMnemonic, sites.StateCode):
         array_ind = [_oid, _id, name, state]
-        df_colnames = ["OBJECTID", "ID", "Name", "State"]
+        df_colnames = ["OBJECTID", "ID", "NameMnemonic", "StateCode"]
 
         # Iterate over all combinations of variables and scenarios
         for sce in scenarios:
@@ -288,6 +294,7 @@ def calculate_temporal_mean(
                      how="inner", 
                      left_on=["OBJECTID", "ID"], 
                      right_on=["OBJECTID", "ID"],
+                     suffixes=(None, "_copy"),
                     )
 
     # Write to CSV
@@ -356,6 +363,74 @@ def get_climate_ensemble(
     print(f"STATUS UPDATE: The CSVs generated from get_climate_ensemble() function are stored in the '{output_dir}' directory.")
 
 
+def get_per_year_stats(
+    sites: pd.DataFrame, 
+    scenarios: List[str], 
+    variables: List[str], 
+    datadir: str, 
+) -> None:
+    """Calculates the year-wise max, mean, and std of data for each site.
+    
+    Args:
+        sites (pd.DataFrame): Data Frame containing all the site information. 
+        scenarios (List[str]):  Scenarios of interest.
+        variables (List[str]):  Variables of interest.
+        datadir (str): Parent directory containing all the data files.
+            The generated output file is also stored here.
+    """
+    # Create the output directory where the generated CSVs will be stored
+    output_dir = os.path.join(datadir, "per_year_stats")
+    if not os.path.isdir(output_dir):
+        os.makedirs(output_dir)
+    else:
+        warnings.warn(f"{output_dir} already exists! The generated CSVs will be added or overwritten in this directory.")
+    
+    # Iterating over all sites
+    name_state_list = list(zip(sites.NameMnemonic, sites.StateCode))
+    with tqdm(name_state_list) as tqdm_name_state_list:
+        tqdm_name_state_list.set_description("LM Sites")
+
+        for name, state in tqdm_name_state_list:
+            df_array = []
+
+            # Iterating over all combinations of scenarios and variables and 
+            # concating data for all combinations in a single data frame
+            df = pd.DataFrame()
+            for sce in scenarios:
+                for var in variables[:1]:
+                    csv_path = os.path.join(datadir, f"{sce}_{var}_ensemble", f"{name}_{state}_{sce}_{var}.csv")
+                    df_i = pd.read_csv(csv_path)
+                    df_i = df_i.set_index("date")
+
+                    if df.empty:
+                        df = df_i
+                    else:
+                        df = pd.concat([df, df_i])
+
+                    df.index = pd.to_datetime(df.index)
+
+            # Calculating the year-wise max, mean, and std for the data
+            max_val = df['mean'].groupby(pd.Grouper(freq='1Y')).max()
+            mean_val = df['mean'].groupby(pd.Grouper(freq='1Y')).mean()
+            std_val = df['mean'].groupby(pd.Grouper(freq='1Y')).std()
+
+            # Adding data to the data frame array
+            df_array.append(max_val)
+            df_array.append(mean_val)
+            df_array.append(std_val)
+
+            # Converting data frame array to data frame
+            df_pr = pd.DataFrame(np.array(df_array).T)
+            df_pr.columns = ["maximum", "mean", "std"]
+            df_pr.index = range(1950,2100)
+
+            # Write to CSV file
+            output_csv_path = os.path.join(output_dir, f"{name}_{state}_PMP.csv")
+            df_pr.to_csv(output_csv_path)
+    
+    print(f"STATUS UPDATE: The CSVs generated from get_per_year_stats() function are stored in the '{output_dir}' directory.")
+    
+    
 ############################
 # NOTES
 ############################
