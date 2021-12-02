@@ -41,6 +41,17 @@ def main():
     variables = ["pr"]
     with utils.ExecTimeCM("get_per_year_stats()") as et:    # This line is not required to run the function. It is only used to check the function's execution time.
         pp.get_per_year_stats(sites, scenarios, variables, datadir)
+        
+    scenarios = ["historical", "rcp45", "rcp85"]
+    variables = ["pr"]
+    date_ranges = [
+        ('1950-01', '1989-12'),
+        ('1990-01', '2019-12'),
+        ('2020-01', '2059-12'),
+        ('2060-01', '2099-12'),
+    ]
+    with utils.ExecTimeCM("get_sub_period_stats()") as et:    # This line is not required to run the function. It is only used to check the function's execution time.
+        pp.get_sub_period_stats(sites, scenarios, variables, datadir, date_ranges, comp_function="gt", agg_function=None, get_stats=True)
     
 
 if __name__ == "__main__":

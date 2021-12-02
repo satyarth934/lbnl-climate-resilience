@@ -7,7 +7,7 @@ import datetime
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-from typing import List
+from typing import List, Tuple, Callable
 
 import utils
 
@@ -397,7 +397,7 @@ def get_per_year_stats(
             # concating data for all combinations in a single data frame
             df = pd.DataFrame()
             for sce in scenarios:
-                for var in variables[:1]:
+                for var in variables:
                     csv_path = os.path.join(datadir, f"{sce}_{var}_ensemble", f"{name}_{state}_{sce}_{var}.csv")
                     df_i = pd.read_csv(csv_path)
                     df_i = df_i.set_index("date")
@@ -430,7 +430,172 @@ def get_per_year_stats(
     
     print(f"STATUS UPDATE: The CSVs generated from get_per_year_stats() function are stored in the '{output_dir}' directory.")
     
+
+def get_sub_period_stats(
+    sites: pd.DataFrame, 
+    scenarios: List[str], 
+    variables: List[str], 
+    datadir: str, 
+    date_ranges: List[Tuple[str]], 
+    comp_function: str="gt", 
+    get_stats: bool=True, 
+    agg_function: Callable=None, 
+    **kwargs: object
+) -> None:
+    """Calculates some stats within a specified date range.
     
+    Args:
+        sites (pd.DataFrame): Data Frame containing all the site information. 
+        scenarios (List[str]):  Scenarios of interest.
+        variables (List[str]):  Variables of interest.
+        datadir (str): Parent directory containing all the data files.
+            The generated output file is also stored here.
+        date_ranges (List[Tuple[str]]): Each tuple contains a start date and 
+            an end date as string in the format 'YYYY-MM' or 'YYYY-MM-DD'.
+        comp_function (str, optional): Comparision function between the 
+            aggregation function output and the date range values. 
+            This is used to get stats. Defaults to 'gt' (greater).
+            Options: 'eq' (equal) | 'gt' (greater) | 'lt' (lesser)
+            Can be a callable as well but that can be implemented if needed.
+        get_stats (bool, optional): Count and Amount values are calculated only 
+            if this flag is set to True. Otherwise only the aggregation of 
+            values between the dates is performed. 
+            Defaults to True.
+        agg_function (Callable, optional): This is the function that is used to 
+            aggregate the data between the given time ranges. 
+            Defaults to None, in which case 99th percentile is calculated. 
+            All argument other than an input array can be passed as kwargs.
+        kwargs (object, optional): All the parameters that are needed as input 
+            for the agg_function can be passed in sequence at the end.
+            Example: agg_function(data, **kwargs)
+    
+    Raises:
+        ValueError: Raises this exception if the value of comp_function() is 
+            anything other than the specified options.
+        ValueError: Raises this exception if the input format or type of dates 
+            in date_ranges is incorrect.
+    """
+    
+    # If a default aggregation function is not provided, the 99th percentile is 
+    # calculated for the data within the date range.
+    if agg_function is None:
+        agg_function = np.percentile
+        kwargs["q"] = 99    # qth percentile for the percentile function
+    
+    # Checking the type and format of input date_ranges
+    try:
+        for start_date, end_date in date_ranges:
+            pd.to_datetime(start_date)
+            pd.to_datetime(end_date)
+    except Exception as e:
+        raise ValueError("The input format or type of the dates is incorrect. \
+            Input is expected to be in the following format: \
+            [('YYYY-MM-DD', 'YYYY-MM-DD'), ('YYYY-MM-DD', 'YYYY-MM-DD'), ...]\
+            OR\
+            [('YYYY-MM', 'YYYY-MM'), ('YYYY-MM', 'YYYY-MM'), ...]")
+    
+    # Declare variables that will be used to convert the processed data to a DataFrame
+    df_array = []
+    df_colnames = []
+    
+    # Generates a different CSV for each variables
+    for var in variables:
+        oid_id_name_state_list = list(zip(sites.OBJECTID, sites.ID, sites.NameMnemonic, sites.StateCode))
+        with tqdm(oid_id_name_state_list) as tqdm_oid_id_name_state_list:
+            tqdm_oid_id_name_state_list.set_description(f"Iterating LM Sites for '{var}' variable.")
+
+            for _oid, _id, name, state in tqdm_oid_id_name_state_list:
+                array_ind = [_oid, _id, name, state]
+                df_colnames = ["OBJECTID", "ID", "NameMnemonic", "StateCode"]
+
+                # Iterating over all combinations of scenarios and variables and 
+                # concating data for all combinations in a single data frame
+                df = pd.DataFrame()
+                for sce in scenarios:
+                    csv_path = os.path.join(datadir, f"{sce}_{var}_ensemble", f"{name}_{state}_{sce}_{var}.csv")
+                    df_i = pd.read_csv(csv_path)
+                    df_i = df_i.set_index("date")
+
+                    if df.empty:
+                        df = df_i
+                    else:
+                        df = pd.concat([df, df_i])
+
+                    df.index = pd.to_datetime(df.index)
+
+                # Extracting data for each date range
+                for start_date, end_date in date_ranges:
+                    date_range_idxs = df.index.to_series().between(start_date, end_date)
+                    df_date_range = df[date_range_idxs]
+
+                    # Aggregating the values for the date range and storing as a row in formation
+                    agg_val = agg_function(df_date_range['mean'], **kwargs)
+                    array_ind.append(agg_val)
+
+                    # Update the column names
+                    start_yr = pd.to_datetime(start_date).year
+                    end_yr = pd.to_datetime(end_date).year
+                    colname = f"{start_yr}_{end_yr}_{agg_function.__name__}"
+                    if colname not in df_colnames:
+                        df_colnames.append(colname)
+
+                    # Calculate stats only if flagged
+                    if get_stats:
+                        # Define the query based on the comparison function 
+                        if comp_function == "gt":
+                            query = df_date_range['mean'] > agg_val
+                        elif comp_function == "lt":
+                            query = df_date_range['mean'] < agg_val
+                        elif comp_function == "eq":
+                            query = df_date_range['mean'] == agg_val
+                        else:
+                            raise ValueError("Incorrect value passed for the 'comp_function'. Expecting one of these three: 'eq' | 'gt' | 'lt'.")
+
+                        delta_yrs = (end_yr - start_yr + 1)
+
+                        # -----
+                        # Count the number of values in comparison with the aggregated value
+                        count = np.count_nonzero(query) / delta_yrs    # count per year
+                        array_ind.append(count)
+
+                        # Update the column names
+                        colname = f"{start_yr}_{end_yr}_count_{comp_function}_{agg_function.__name__}"
+                        if colname not in df_colnames:
+                            df_colnames.append(colname)
+
+                        # -----
+                        # Get the mean of the values in comparison with the aggregated value
+                        amount = np.sum(df_date_range["mean"][query]) / delta_yrs     # mean amount per year
+                        array_ind.append(amount)
+
+                        # Update the column names
+                        colname = f"{start_yr}_{end_yr}_amount_{comp_function}_{agg_function.__name__}"
+                        if colname not in df_colnames:
+                            df_colnames.append(colname)
+
+                # Store the row for conversion to DataFrame
+                df_array.append(array_ind)
+
+        # Converting data frame array to data frame
+        df_sub_periods = pd.DataFrame(df_array)
+        df_sub_periods.columns = df_colnames
+
+        # Merge the generated data with the original Data Frame
+        # if any duplicate column names are found, the first one will be left 
+        # untouched and '_copy' will be appended to the other occurance.
+        df_final = pd.merge(sites, df_sub_periods, 
+                            how="inner", 
+                            left_on=["OBJECTID", "ID"], 
+                            right_on=["OBJECTID", "ID"],
+                            suffixes=(None, "_copy"),
+                           )
+
+        # Write to CSV
+        output_csv_path = os.path.join(datadir, f"{var}_sub_period_stats.csv")
+        df_final.to_csv(output_csv_path)
+        print(f"STATUS UPDATE: The output file generated from get_sub_period_stats() function is stored as {output_csv_path}.")
+
+
 ############################
 # NOTES
 ############################
