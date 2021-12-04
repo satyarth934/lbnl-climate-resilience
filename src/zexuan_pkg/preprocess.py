@@ -555,7 +555,7 @@ def get_sub_period_stats(
 
                         # -----
                         # Count the number of values in comparison with the aggregated value
-                        count = np.count_nonzero(query) / delta_yrs    # count per year
+                        count = np.count_nonzero(query) / delta_yrs    # count per year - TODO: Ensure that this is fine because it generates the same counts for all the sites.
                         array_ind.append(count)
 
                         # Update the column names
