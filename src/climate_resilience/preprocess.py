@@ -56,8 +56,7 @@ def calculate_Nth_percentile(
         # Iterate over all combinations of variables and scenarios
         for sce in scenarios:
             for var in variables:
-                # TODO: Should these filenames be something else? 
-                # These do not match the download script filenaming format.
+                
                 csv_path = os.path.join(datadir, 
                                         f"{sce}_{var}_ensemble", 
                                         f"{name}_{state}_{sce}_{var}.csv")
@@ -154,8 +153,6 @@ def calculate_pr_count_amount(
                 if historical_col_name not in df_pr:
                     raise KeyError(f"{historical_col_name} column does not exist in the percentile data frame. Check the df_pr_csv_path argument.")
                 
-                # TODO: Should these filenames be something else? 
-                # These do not match the download script filenaming format.
                 csv_path = os.path.join(datadir, 
                                         f"{sce}_{var}_ensemble", 
                                         f"{name}_{state}_{sce}_{var}.csv")
@@ -246,8 +243,7 @@ def calculate_temporal_mean(
         # Iterate over all combinations of variables and scenarios
         for sce in scenarios:
             for var in variables:
-                # TODO: Should these filenames be something else? 
-                # These do not match the download script filenaming format.
+                
                 csv_path = os.path.join(datadir, 
                                         f"{sce}_{var}_ensemble", 
                                         f"{name}_{state}_{sce}_{var}.csv")
@@ -594,23 +590,3 @@ def get_sub_period_stats(
         output_csv_path = os.path.join(datadir, f"{var}_sub_period_stats.csv")
         df_final.to_csv(output_csv_path)
         print(f"STATUS UPDATE: The output file generated from get_sub_period_stats() function is stored as {output_csv_path}.")
-
-
-############################
-# NOTES
-############################
-"""
-Questions:
-1. Is the sites csv file expected to be on local drive?
-2. Are the downloaded csv files expected to by on the local drive as well?
-3. Is it assumed that the data will be downloaded locally from drive? - [My guess: YES]
-4. Where is the "*_ensemble*" file downloaded from?
-5. The variable nyr_hist and nyr_proj, are the supposed to have a fixed value or are they experimental?
-6. Confirm if ObjectID and ID are good unique identifiers for each row.
-
-Tasks:
-1. Do not worry about drive or local file downloads.
-    It is for the user to worry about. 
-    Just the function would be from the library that can be used either in colab for drive files or on local machine.
-    The directory path would work the same for both the cases.
-"""

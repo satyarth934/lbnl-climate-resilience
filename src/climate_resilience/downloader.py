@@ -315,19 +315,3 @@ class SitesDownloader:
             )
             for config_i in download_configs
         )
-
-
-######################################################
-# Notes
-######################################################
-"""
-1. See if you can combine all the functions and have an internal time bound 
-    parameter for daily/monthly information.
-2. Input to image collection defines daily/monthly, so dont change that.
-3. model based filtering will not be possible for monthly. It is already 
-    aggregated over the ensembles.
-4. Ignore the drive folder creation thing. That's google's issue to handle.
-5. Have a separate util function that runs over all the variables, models, 
-    scenarios, etc to download. Basically the user should not be writing for 
-    loops for all the downloads.
-"""
