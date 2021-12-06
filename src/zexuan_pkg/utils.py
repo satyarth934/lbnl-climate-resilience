@@ -3,6 +3,10 @@ import yaml
 import time
 
 
+#########################
+# GENERAL PURPOSE UTILS #
+#########################
+
 def parse_input_yaml(yaml_path: str) -> dict:
     """Returns the yaml file content as dictionary.
     
@@ -61,8 +65,11 @@ def warning_format(msg, *args, **kwargs):
     'n' is the line number of initiated warning command within the script
     
     Example Usage:
+        import warnings
         warnings.formatwarning = warning_format
         warnings.warn("<Warning msg>")
     """
     
     return f"{args[1]}:{args[2]}: {args[0].__name__}: {str(msg)}\n"
+    
+    
