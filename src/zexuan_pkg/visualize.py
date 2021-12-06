@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import pandas as pd
+import seaborn as sns
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import leafmap  # Helps with the colorbar plot. Builds on top of ipyleaflet
@@ -12,8 +13,6 @@ from ipyleaflet import (
     FullScreenControl,
     AwesomeIcon,
 )
-
-from traitlets import Int
 
 from tqdm import tqdm
 
@@ -39,15 +38,13 @@ def plot_site_on_map(
         name=icon_name, marker_color=site.loc["color"], icon_color="black", spin=False,
     )
     loc = [site.loc["Latitude"], site.loc["Longitude"]]
-    info = (
-        f"OBJECTID: {site['OBJECTID']} \nID: {site['ID']} \n{feature}: {site[feature]}"
-    )
+    info = f"{feature}: {site[feature]}"
     marker = Marker(location=loc, draggable=False, icon=icon, title=info, alt=info)
 
     ipl_map.add_layer(marker)
 
 
-def plotmap(
+def plot_map(
     sites: pd.DataFrame,
     feature: str,
     colors: List[str],
@@ -215,33 +212,70 @@ def plot_histogram(
     return fig, ax
 
 
-# ONLY USED FOR DEBUGGING
-if __name__ == "__main__":
-    datadir = "/global/scratch/satyarth/Projects/lbnl-zexuan-code/data"
-    sites_csv_path = os.path.join(datadir, "LMsites.csv")
-    sites = pd.read_csv(sites_csv_path)
+def plot_boxplot(
+    data: pd.DataFrame,
+    x_feature: str,
+    y_feature: str,
+    hue_feature: str,
+    hue_order: List[str] = None,
+    colors: List[str] = None,
+    x_label: str = None,
+    y_label: str = None,
+    plot_title: str = "Box Plot",
+    figsize: Tuple[int] = (12, 6),
+    output_filename: str = None,
+) -> plt.axes:
+    """Create boxplot using the provided data.
+    
+    Args:
+        data (pd.DataFrame): Data that is used to plot the boxplots.
+        x_feature (str): Feature within the data that is plotted on the x-axis.
+        y_feature (str): Feature within the data that is plotted on the y-axis.
+        hue_feature (str): Feature within the data that is used as the 
+            third dimension categorical levels.
+        hue_order (List[str]): The order in which the categorical levels are to 
+            be plotted. 
+            Defaults to None. Levels are infered from the data argument 
+            automatically if this argument is None.
+        colors (List[str]): List of colors to be used for each categorical 
+            level. 
+            Defaults to None. 
+        x_label (str, optional): X-axis label. Defaults to None. The 'x_feature'
+            argument is used if this argument is not provided.
+        y_label (str, optional): Y-axis label. Defaults to None. The 'y_feature'
+            argument is used if this argument is not provided.
+        plot_title (str, optional): Title of the plot. Defaults to 'Box Plot'.
+        figsize (Tuple[int], optional): Figure canvas size. Defaults to (12,6).
+        output_filename (str, optional): Name of the output PNG file. 
+            Defaults to None. The output file is not generated in this case.
+    
+    Returns:
+        plt.axes: Return the plot object axes. This object can be used to 
+            further add plot components if required by the user.
+    """
 
-    pr_csv_path = os.path.join(datadir, "LMsites_pr1.csv")
-    df_pr = pd.read_csv(pr_csv_path)
-    df_pr = df_pr.dropna(subset=["historical"])
+    # Updating default values if None is passed as argument
+    x_label = x_feature if x_label is None else x_label
+    y_label = y_feature if y_label is None else y_label
 
-    df_pr["rcp26_diff"] = df_pr["rcp26"] - df_pr["historical"]
-    df_pr["rcp45_diff"] = df_pr["rcp45"] - df_pr["historical"]
-    df_pr["rcp60_diff"] = df_pr["rcp60"] - df_pr["historical"]
-    df_pr["rcp85_diff"] = df_pr["rcp85"] - df_pr["historical"]
-
-    df_pr["rcp26_ratio"] = df_pr["rcp26_diff"] / df_pr["historical"]
-    df_pr["rcp45_ratio"] = df_pr["rcp45_diff"] / df_pr["historical"]
-    df_pr["rcp60_ratio"] = df_pr["rcp60_diff"] / df_pr["historical"]
-    df_pr["rcp85_ratio"] = df_pr["rcp85_diff"] / df_pr["historical"]
-
-    col_pr = ["red", "lightblue", "cadetblue", "blue", "darkblue"]
-    ipl_map = plotmap(
-        sites=df_pr,
-        feature="rcp45_diff",
-        icon_name="umbrella",
-        scale_range=np.array([-0.05, 0.35]),
-        col=col_pr,
-        plot_colorbar=True,
-        output_map_name="Test_map_4.html",
+    # Plotting the box plot
+    fig = plt.figure(figsize=figsize)
+    ax = fig.add_subplot()
+    ax = sns.boxplot(
+        x=x_feature,
+        y=y_feature,
+        hue=hue_feature,
+        data=data,
+        hue_order=hue_order,
+        palette=colors,
     )
+    ax.legend(bbox_to_anchor=(1.0, 0.8))
+    ax.set_title(plot_title)
+    ax.set_xlabel(x_label)
+    ax.set_ylabel(y_label)
+
+    # Generating the output file
+    if output_filename is not None:
+        fig.savefig(output_filename, bbox_inches="tight")
+
+    return ax
