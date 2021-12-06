@@ -13,6 +13,8 @@ from ipyleaflet import (
     AwesomeIcon,
 )
 
+from traitlets import Int
+
 from tqdm import tqdm
 
 tqdm.pandas()
@@ -20,20 +22,28 @@ tqdm.pandas()
 import utils
 
 
-def plot_site_on_map(site: pd.Series, icon_name: str, ipl_map: leafmap.Map,) -> None:
+def plot_site_on_map(
+    site: pd.Series, icon_name: str, ipl_map: leafmap.Map, feature: str,
+) -> None:
     """Plot a single site on the map.
+    Also provides a tooltip at the markers showing the values and site ID.
     
     Args:
         site (pd.Series): Site to be plotted on the map.
         icon_name (str): Icon to be used as marker on the map.
         ipl_map (leafmap.Map): Map on which the site markers are added.
+        feature (str): Feature based on which the markers are generated.
     """
 
     icon = AwesomeIcon(
         name=icon_name, marker_color=site.loc["color"], icon_color="black", spin=False,
     )
     loc = [site.loc["Latitude"], site.loc["Longitude"]]
-    marker = Marker(location=loc, draggable=False, icon=icon)
+    info = (
+        f"OBJECTID: {site['OBJECTID']} \nID: {site['ID']} \n{feature}: {site[feature]}"
+    )
+    marker = Marker(location=loc, draggable=False, icon=icon, title=info, alt=info)
+
     ipl_map.add_layer(marker)
 
 
@@ -52,6 +62,9 @@ def plotmap(
     output_map_name: str = None,
 ) -> leafmap.Map:
     """Plot and mark each site on a map.
+    
+    The markers that are generated in white color either lie outside the range 
+    specified in 'scale_range' OR have nan values.
     
     Args:
         sites (pd.DataFrame): Data Frame containing all the site information. 
@@ -118,8 +131,9 @@ def plotmap(
 
     # Plot each site on the map
     sites.progress_apply(
-        lambda site: plot_site_on_map(site, icon_name, ipl_map), axis=1
+        lambda site: plot_site_on_map(site, icon_name, ipl_map, feature), axis=1
     )
+
     ipl_map.add_control(FullScreenControl())
 
     # Plot the colorbar on the map
@@ -159,15 +173,15 @@ def plot_histogram(
         features (List[str]): Features of interest.
         n_bins (int): Number of histogram bins. Will be ignored if 
             'bins' argument is passed. Defaults to 10.
-        bins (List[float]): Custom bins for the histogram. Defaults to None. 
-            'n_bins' argument is used in this case.
+        bins (List[float]): Custom bins for the histogram. 
+            Defaults to None. 'n_bins' argument is used in this case.
         plot_title (str): Title of the resulting plot.
         figsize (Tuple[int]): Size of the output plot. Format: (width, height).
         xlabels (List[str]): Custom labels in place of x-axis bin range values. 
             Defaults to None. Original bin values are used in this case.
         colors (List["str"]): List of colors for each data vector. 
-            Must match the number features listed. Defaults to None. 
-            Matplotlib default colors are used in this case.
+            Must match the number features listed. 
+            Defaults to None. Matplotlib default colors are used in this case.
             
     Returns:
         Tuple[plt.figure, plt.axes]: Returns the figure and axes for the 
