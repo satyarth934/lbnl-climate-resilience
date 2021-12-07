@@ -1,5 +1,7 @@
 # lbnl-climate-resilience
 
+[pip package](https://pypi.org/project/climate-resilience/)
+
 ---
 ## Download [Examples](./examples/climate-resilience/download_example.py)
 We cannot directly download the data from the Google Earth Engine directly onto 
