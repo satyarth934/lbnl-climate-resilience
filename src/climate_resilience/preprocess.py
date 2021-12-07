@@ -1,6 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
 import os
 import glob
 import datetime
@@ -9,7 +6,7 @@ import pandas as pd
 from tqdm import tqdm
 from typing import List, Tuple, Callable
 
-import utils
+from climate_resilience import utils
 
 import warnings
 warnings.formatwarning = utils.warning_format

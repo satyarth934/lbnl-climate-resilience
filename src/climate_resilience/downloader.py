@@ -1,6 +1,3 @@
-import sys
-sys.dont_write_bytecode = True
-
 import os
 import itertools
 import numpy as np
@@ -18,8 +15,10 @@ from google.auth import compute_engine
 from joblib import Parallel, delayed
 parallel_function = Parallel(n_jobs=-1, verbose=5)
 
-import utils
-import constants as c
+from climate_resilience import utils
+from climate_resilience import constants as C
+# import utils
+# import constants as c
 
 
 class SitesDownloader:
@@ -57,7 +56,7 @@ class SitesDownloader:
                 Not necessaily useful for basic download commands.
         """
         
-        if variable not in c.CONST:
+        if variable not in C.CONST:
             raise ValueError("Incorrect variable.")
             
         # Get CMIP5 image collection
@@ -66,8 +65,8 @@ class SitesDownloader:
                     .select(variable) \
                     .filter(ee.Filter.eq('scenario', scenario)) \
 
-        timeseries = ee.FeatureCollection(CMIP5.map(lambda img: img.multiply(c.CONST[variable]["multiply"]) \
-                                                                    .add(c.CONST[variable]["add"]) \
+        timeseries = ee.FeatureCollection(CMIP5.map(lambda img: img.multiply(C.CONST[variable]["multiply"]) \
+                                                                    .add(C.CONST[variable]["add"]) \
                                                                     .reduceRegions(geom, ee.Reducer.mean(), 500) \
                                                                     .first() \
                                                    )
@@ -109,7 +108,7 @@ class SitesDownloader:
                 Not necessaily useful for basic download commands.
         """
         
-        if variable not in c.CONST:
+        if variable not in C.CONST:
             raise ValueError("Incorrect variable.")
         
         # Get CMIP5 image collection
@@ -119,8 +118,8 @@ class SitesDownloader:
                   .filter(ee.Filter.eq('scenario', scenario)) \
                   .filter(ee.Filter.eq('model', model))
 
-        timeseries = ee.FeatureCollection(CMIP5.map(lambda img: img.multiply(c.CONST[variable]["multiply"]) \
-                                                                    .add(c.CONST[variable]["add"]) \
+        timeseries = ee.FeatureCollection(CMIP5.map(lambda img: img.multiply(C.CONST[variable]["multiply"]) \
+                                                                    .add(C.CONST[variable]["add"]) \
                                                                     .reduceRegions(geom,ee.Reducer.mean(),500) \
                                                                     .first() \
                                                                     .set('date', ee.Date(img.date()).format('YYYY-MM-DD')) \
@@ -161,7 +160,7 @@ class SitesDownloader:
                 Not necessaily useful for basic download commands.
         """
         
-        if variable not in c.CONST:
+        if variable not in C.CONST:
             raise ValueError("Incorrect variable.")
         
         # Get CMIP5 image collection
@@ -170,8 +169,8 @@ class SitesDownloader:
                   .select(variable) \
                   .filter(ee.Filter.eq('scenario', scenario)) \
 
-        timeseries = ee.FeatureCollection(CMIP5.map(lambda img: img.multiply(c.CONST[variable]["multiply"]) \
-                                                                    .add(c.CONST[variable]["add"]) \
+        timeseries = ee.FeatureCollection(CMIP5.map(lambda img: img.multiply(C.CONST[variable]["multiply"]) \
+                                                                    .add(C.CONST[variable]["add"]) \
                                                                     .reduceRegions(geom,ee.Reducer.mean(),500) \
                                                                     .first() \
                                                                     .set('date', ee.Date(img.date()).format('YYYY-MM'))

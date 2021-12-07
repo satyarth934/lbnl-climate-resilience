@@ -18,7 +18,7 @@ from tqdm import tqdm
 
 tqdm.pandas()
 
-import utils
+from climate_resilience import utils
 
 
 def plot_site_on_map(
