@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 
 import ee
 from eecmip5 import eecmip5 as cmip5
-from google.auth import compute_engine
+# from google.auth import compute_engine
 
 from joblib import Parallel, delayed
 parallel_function = Parallel(n_jobs=-1, verbose=5)
