@@ -15,7 +15,8 @@ If the data is on drive, the drive needs to be mounted. This is easier to do in
 a google colab session. Then the path of the mounted drive can be used with the 
 functions as normal.
 
-#### Following is the expected file and directory structure for functions `calculate_Nth_percentile()`, `calculate_pr_count_amount()`, and `calculate_temporal_mean()` in the preprocessing code:
+#### Expected file and directory structure:
+The input file and directory structure for functions `calculate_Nth_percentile()`, `calculate_pr_count_amount()`, and `calculate_temporal_mean()` in the [preprocessing code](./src/climate_resilience/preprocess.py) should be as follows:
 ```
 datadir
 ├── scenario1_variable1_ensemble
