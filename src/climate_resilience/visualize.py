@@ -38,8 +38,8 @@ def plot_site_on_map(
         name=icon_name, marker_color=site.loc["color"], icon_color="black", spin=False,
     )
     loc = [site.loc["Latitude"], site.loc["Longitude"]]
-    info = f"{feature}: {site[feature]}"
-    marker = Marker(location=loc, draggable=False, icon=icon, title=info, alt=info)
+    info = f"{feature}: {float(site[feature]):.5f}"
+    marker = Marker(location=loc, draggable=False, icon=icon, title=info, alt=info)    # setting the title displays information when we hover over the markers.
 
     ipl_map.add_layer(marker)
 
@@ -134,21 +134,31 @@ def plot_map(
     ipl_map.add_control(FullScreenControl())
 
     # Plot the colorbar on the map
+    plot_colorbar_params = {
+        "colors": colors,
+        "label": colorbar_label,
+        "discrete": True,
+        "orientation": "horizontal",
+        "vmin": colorbar_min,
+        "vmax": colorbar_max,
+    }
+    
     if plot_colorbar:
-        ipl_map.add_colormap(
-            colors=colors,
-            label=colorbar_label,
-            discrete=True,
-            orientation="horizontal",
-            vmin=colorbar_min,
-            vmax=colorbar_max,
-        )
+        ipl_map.add_colormap(**plot_colorbar_params)
 
     # Saving output map as HTML
     if output_map_name is not None:
+        # Saving the map
         ipl_map.to_html(output_map_name, title=output_map_name)
         print(f"Saved map as {output_map_name}.")
-
+        
+        # Saving the colorbar separately as PNG - only because the colorbar does
+        # not show up in the HTML Map.
+        output_colorbar_name = output_map_name.replace(".html", "_colorbar.png")
+        colorbar_fig = leafmap.colormaps.create_colormap(**plot_colorbar_params)
+        colorbar_fig.savefig(output_colorbar_name, bbox_inches='tight')
+        print(f"Saved colorbar as {output_colorbar_name}.")
+        
     return ipl_map
 
 
