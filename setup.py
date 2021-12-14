@@ -23,7 +23,7 @@ with open(file='README.md', mode='r', encoding='utf-8') as f:
 
 setup(
     name="climate-resilience",
-    version="0.1.8",
+    version="0.1.9",
     description="Download, Preprocessing, and Visualization code for climate resilience data.",
     long_description=readme,
     long_description_content_type="text/markdown",
