@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Learn more: https://github.com/kennethreitz/setup.py
-
+import os
 from setuptools import setup, find_packages
 
 
@@ -18,14 +18,16 @@ install_requires = [
     "joblib",
 ]
 
-with open(file='README.md', mode='r', encoding='utf-8') as f:
-    readme = f.read()
+# description_file = os.path.abspath('DESCRIPTION.md')
+description_file = 'DESCRIPTION.md'
+with open(file=description_file, mode='r', encoding='utf-8') as f:
+    pypi_description = f.read()
 
 setup(
     name="climate-resilience",
-    version="0.1.9",
+    version="0.2.3",
     description="Download, Preprocessing, and Visualization code for climate resilience data.",
-    long_description=readme,
+    long_description=pypi_description,
     long_description_content_type="text/markdown",
     author=[
         "Satyarth Praveen",
