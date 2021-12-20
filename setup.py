@@ -18,14 +18,14 @@ install_requires = [
     "joblib",
 ]
 
-with open(file='README.md', mode='r', encoding='utf-8') as f:
-    readme = f.read()
+with open(file='DESCRIPTION.md', mode='r', encoding='utf-8') as f:
+    pypi_description = f.read()
 
 setup(
     name="climate-resilience",
-    version="0.1.9",
+    version="0.2.0",
     description="Download, Preprocessing, and Visualization code for climate resilience data.",
-    long_description=readme,
+    long_description=pypi_description,
     long_description_content_type="text/markdown",
     author=[
         "Satyarth Praveen",
