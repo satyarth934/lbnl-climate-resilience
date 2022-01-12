@@ -1,0 +1,111 @@
+Latitude,Longitude,Name,NameMnemonic,StateCode
+35.88441,-106.30667,"Acid/Pueblo Canyon, NM, Site",APC,NM
+41.887939,-84.014692,"Adrian, MI, Site",ADR,MI
+44.62021,-123.1208,"Albany, OR, Site",AOR,OR
+40.642126,-80.243968,"Aliquippa, PA, Site",ALP,PA
+35.408798,-107.799285,"Ambrosia Lake, NM, Disposal Site",AMB,NM
+51.436583,179.179778,"Amchitka, AK, Site",AMC,AK
+41.94343,-71.234169,"Attleboro, MA, Site",ATT,MA
+41.9396982,-80.7214417,"Ashtabula, OH, Site",ASH,OH
+35.88755,-106.24657,"Bayo Canyon, NM, Site",BAY,NM
+37.87263,-122.25629,"Berkeley, CA, Site",BCA,CA
+42.54042,-70.88862,"Beverly, MA, Site",BEV,MA
+35.270623,-107.947483,"Bluewater, NM, Disposal Site",BLU,NM
+18.364744,-67.268557,"BONUS, PR, Decommissioned Reactor Site",BON,PR
+40.04797041,-108.3685855,"Bronco, CO, Site",BRO,CO
+42.84099,-78.83386,"Buffalo, NY, Site",BUF,NY
+40.433059,-79.242531,"Burrell, PA, Disposal Site",BUR,PA
+36.45029,-119.57535,"Burris Park, CA, Site",BRP,CA
+40.256152,-80.199721,"Canonsburg, PA, Disposal Site",CAN,PA
+42.900981,-106.445354,"Casper, WY, Calibration Model",CSC,WY
+38.634232,-116.216219,"Central Nevada Test Area, NV",CNT,NV
+68.1025219,-165.7720951,"Chariot, AK, Site",CHA,AK
+41.799395,-87.606969,"Chicago North, IL, Site",CHN,IL
+41.790408,-87.599677,"Chicago South, IL, Site",CHS,IL
+34.09813,-106.20924,"Chupadera Mesa, NM, Site",CHM,NM
+42.689729,-73.802984,"Colonie, NY, Site",CLN,NY
+39.95694,-83.01174,"Columbus East, OH, Site",COE,OH
+37.248481,-107.903876,"Durango, CO, Disposal Site",DUD,CO
+37.26562,-107.884723,"Durango, CO, Processing Site",DUP,CO
+43.273539,-103.794231,"Edgemont, SD, Disposal Site",EDG,SD
+18.3388396,-65.8344738,"El Verde, PR, Site",ELV,PR
+39.36087,-84.54117,"Fairfield, OH, Site",FFO,OH
+28.905375,-98.132276,"Falls City, TX, Disposal Site",FCT,TX
+39.29945,-84.688331,"Fernald Preserve, OH, Site",FER,OH
+36.677903,-107.208999,"Gasbuggy, NM, Site",GSB,NM
+28.334928,-98.050831,"George West, TX, Calibration Model",GWC,TX
+32.263164,-103.866477,"Gnome-Coach, NM, Site",GNO,NM
+39.128555,-108.53707,"Grand Junction Regional Airport, CO, Calibration Model",GAC,CO
+39.043371,-108.573355,"Grand Junction, CO, Calibration Model",GJC,CO
+38.902364,-108.338213,"Grand Junction, CO, Disposal Site",GRJ,CO
+39.055441,-108.54925,"Grand Junction, CO, Processing Site",GJT,CO
+39.043371,-108.573355,"Grand Junction, CO, Site",GJO,CO
+38.69149,-90.16289,"Granite City, IL, Site",GRC,IL
+35.25447,-107.84307,"Grants, NM, Calibration Model",GNC,NM
+38.978164,-110.136749,"Green River, UT, Disposal Site",GRN,UT
+38.51014,-106.846387,"Gunnison, CO, Disposal Site",GUD,CO
+38.528258,-106.942532,"Gunnison, CO, Processing Site",GUP,CO
+40.558519,-96.784697,"Hallam, NE, Decommissioned Reactor Site",HAL,NE
+39.38207,-84.54708,"Hamilton, OH, Site",HAO,OH
+42.15423,-72.49972,"Indian Orchard, MA, Site",INO,MA
+40.70906,-74.10219,"Jersey City, NJ, Site",JEC,NJ
+35.187651,-107.334722,"L-Bar, NM, Disposal Site",BAR,NM
+38.519166,-121.755111,"Laboratory for Energy-Related Health Research, CA, Site",LEH,CA
+42.285784,-120.433462,"Lakeview, OR, Disposal Site",LKD,OR
+42.21008,-120.36367,"Lakeview, OR, Processing Site",LKP,OR
+44.08479,-115.606689,"Lowman, ID, Disposal Site",LOW,ID
+38.68817,-90.166642,"Madison, IL, Site",MAD,IL
+38.25875,-83.57,"Maxey Flats, KY, Disposal Site",MAX,KY
+40.544556,-108.015615,"Maybell West, CO, Disposal Site",MAW,CO
+40.543859,-107.99287,"Maybell, CO, Disposal Site",MAY,CO
+37.133607,-109.874549,"Mexican Hat, UT, Disposal Site",HAT,UT
+37.851103,-109.325213,"Monticello, UT, Disposal and Processing Sites",MNT,UT
+38.931871,-92.3421023,"Missouri University Research Reactor, MO, Site",MUR,MO
+36.931242,-109.866515,"Monument Valley, AZ, Processing Site",MON,AZ
+39.627799,-84.286025,"Mound, OH, Site",MND,OH
+38.360283,-108.75443,"Naturita, CO, Disposal Site",NAD,CO
+38.239805,-108.611094,"Naturita, CO, Processing Site",NAP,CO
+40.470348,-74.476119,"New Brunswick, NJ, Site",NWB,NJ
+40.74649,-74.00658,"New York, NY, Site",NYN,NY
+43.21992684,-78.9732975,"Niagara Falls Storage Site Vicinity Properties, NY, Site",NFV,NY
+36.042608,-84.207185,"Oak Ridge, TN, Warehouses Site",ORW,TN
+39.50375,-84.743455,"Oxford, OH, Site",OXO,OH
+34.1901826,-119.2946173,"Oxnard, CA, Site",OXN,CA
+41.756445,-81.236156,"Painesville, OH, Site",PAI,OH
+39.250115,-81.685817,"Parkersburg, WV, Disposal Site",PKB,WV
+27.874948,-82.749012,"Pinellas County, FL, Site",PIN,FL
+40.1319,-84.23462,"Piqua, OH, Decommissioned Reactor Site",PIQ,OH
+47.92821359,-106.6492418,"Pre-Gondola and Trencher, MT, Site",PGD,MT
+42.40104084,-115.5756959,"Pre-Schooner II, ID, Site",PSC,ID
+39.524991,-107.814042,"Rifle New, CO, Processing Site",RFN,CO
+39.529479,-107.771654,"Rifle Old, CO, Processing Site",RFO,CO
+39.614434,-107.801258,"Rifle, CO, Disposal Site",RFL,CO
+39.793245,-108.367198,"Rio Blanco, CO, Site",RBL,CO
+42.997679,-108.410329,"Riverton, WY, Processing Site",RVT,WY
+39.889868,-105.209222,"Rocky Flats, CO, Site",RFS,CO
+39.405292,-107.948499,"Rulison, CO, Site",RUL,CO
+31.142285,-89.570012,"Salmon, MS, Site",SAL,MS
+40.690666,-113.111437,"Salt Lake City, UT, Disposal Site",SLD,UT
+40.702191,-111.911462,"Salt Lake City, UT, Processing Site",SLP,UT
+41.39823,-73.073137,"Seymour, CT, Site",SCT,CT
+47.876183,-118.106188,"Sherwood, WA, Disposal Site",SHE,WA
+36.770014,-108.684297,"Shiprock, NM, Disposal Site",SHP,NM
+42.335323,-106.196273,"Shirley Basin South, WY, Disposal Site",SBS,WY
+39.200093,-118.381229,"Shoal, NV, Site",SHL,NV
+41.705321,-87.910908,"Site A / Plot M, IL, Decommissioned Reactor Site",SAM,IL
+38.043158,-108.894528,"Slick Rock East, CO, Processing Site",SRE,CO
+38.045816,-108.909424,"Slick Rock West, CO, Processing Site",SRW,CO
+38.054538,-108.864253,"Slick Rock, CO, Disposal Site",SRD,CO
+43.238852,-105.622524,"Spook, WY, Disposal Site",SPK,WY
+40.537774,-79.782012,"Springdale, PA, Site",SPP,PA
+41.672238,-83.568668,"Toledo, OH, Site",TLO,OH
+42.992981,-78.920112,"Tonawanda North, NY, Site Unit 1",TN1,NY
+42.998275,-78.915436,"Tonawanda North, NY, Site Unit 2",TN2,NY
+42.97665,-78.89375,"Tonawanda, NY, Site",TON,NY
+37.886032,-116.762188,"Tonopah Test Range, NV, Site",TTR,NV
+36.145483,-111.134793,"Tuba City, AZ, Disposal Site",TUB,AZ
+39.98549651,-109.6115518,"Utah, UT, Site",UTA,UT
+37.6109403,-121.8386594,"Vallectios Nuclear Center, CA, Site",VNC,CA
+40.96981,-74.27027,"Wayne, NJ, Site",WYN,NJ
+38.698168,-90.728274,"Weldon Spring, MO, Site",WEL,MO
+41.880214,-72.71927,"Windsor, CT, Site",WIN,CT
