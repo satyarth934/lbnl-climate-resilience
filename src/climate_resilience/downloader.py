@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 import geopandas as gpd
-from typing import List
+from typing import List, Tuple, Optional, Union
 from pprint import pprint
 from datetime import datetime, timedelta
 
@@ -22,19 +22,87 @@ from climate_resilience import constants as C
 
 
 class SitesDownloader:
-    def __init__(self, folder: str, site_json_file_path: str) -> None:
+    def __init__(
+        self, 
+        folder: str, 
+        site_json_file_path: str, 
+        latitudes: Optional[Union[Tuple[float], List[float]]]=None, 
+        longitudes: Optional[Union[Tuple[float], List[float]]]=None,
+        latitude_range: Optional[Union[Tuple[float], List[float]]]=None, 
+        longitude_range: Optional[Union[Tuple[float], List[float]]]=None,
+    ) -> None:
         """Initializes the SitesDownloader object.
         
         Args:
             folder (str): Prefix of the output folder on google drive.
             site_json_file_path (str): Path to the json file containing the 
                 site information for downloading data.
+            latitudes (Optional[float, tuple]): Used to query the sites
+                mentioned in the input JSON file. Defaults to None.
+                Can be either a single value or a range of min and max values
+                passed as a tuple. Ignored if latitude_range is defined.
+            longitudes (Optional[float, tuple]): Used to query the sites 
+                mentioned in the input JSON file. Defaults to None.
+                Can be either a single value or a range of min and max values
+                passed as a tuple. Ignored if longitude_range is defined.
+            latitude_range (Optional[tuple, list]): Used to query the sites
+                mentioned in the input JSON file. Defaults to None.
+                Must be either a range of min and max values passed as a tuple 
+                or list. Overrides latitudes.
+            longitude_range (Optional[tuple, list]): Used to query the sites 
+                mentioned in the input JSON file. Defaults to None.
+                Must be either a range of min and max values passed as a tuple 
+                or list. Overrides longitudes.
+        
+        Raises:
+            ValueError: If latitude range is not a tuple of min, max values, 
+                i.e. has more or less than 2 elements.
+            ValueError: If latitude max value is less than the latitude min 
+                value.
+            TypeError: If latitude is defined incorrectly.
+            ValueError: If longitude range is not a tuple of min, max values, 
+                i.e. has more or less than 2 elements.
+            ValueError: If longitude max value is less than the latitude min 
+                value.
+            TypeError: If latitude is defined incorrectly.
         """
         
         self.folder = folder
         
         self.site_json_file_path = site_json_file_path
         self.sites = gpd.read_file(self.site_json_file_path)
+
+        # Querying Latitude
+        if latitude_range is not None:
+            if len(latitude_range) != 2:
+                raise ValueError("Incorrect value for latitude_range.")
+
+            if latitude_range[1] < latitude_range[0]:
+                raise ValueError("Incorrect values for latitude_range. Check the min and max values.")
+            
+            self.sites = self.sites.query(f'{latitude_range[0]} < Latitude < {latitude_range[1]}')
+        else:
+            if latitudes is not None:
+                if isinstance(latitudes, (tuple, list)):
+                    self.sites = self.sites.query(f"Latitude in {latitudes}")
+                else:
+                    raise TypeError("Incorrect input. Check the input for latitudes again.")
+
+        # Querying Longitude
+        if longitude_range is not None:
+            if len(longitude_range) != 2:
+                raise ValueError("Incorrect value for longitude_range.")
+
+            if longitude_range[1] < longitude_range[0]:
+                raise ValueError("Incorrect values for longitude_range. Check the min and max values.")
+            
+            self.sites = self.sites.query(f'{longitude_range[0]} < Longitude < {longitude_range[1]}')
+        else:
+            if longitudes is not None:
+                if isinstance(longitudes, (tuple, list)):
+                    self.sites = self.sites.query(f'Longitude in {longitudes}')
+                else:
+                    raise TypeError("Incorrect input. Check the input for longitudes again.")
 
 
     def download_model_average_daily(self, start_date: datetime, end_date: datetime, variable: str, scenario: str, geom: ee.Geometry.Point, name: str, state: str) -> ee.batch.Task:

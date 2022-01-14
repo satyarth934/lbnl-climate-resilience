@@ -24,7 +24,7 @@ with open(file=description_file, mode='r', encoding='utf-8') as f:
 
 setup(
     name="climate-resilience",
-    version="0.2.3",
+    version="0.2.4",
     description="Download, Preprocessing, and Visualization code for climate resilience data.",
     long_description=pypi_description,
     long_description_content_type="text/markdown",
