@@ -3,13 +3,13 @@
 [pip package](https://pypi.org/project/climate-resilience/)
 
 ---
-## Download [Examples](./examples/climate-resilience/download_example.py)
+## Download [Examples](./examples/climate-resilience/scripts/download_example.py)
 We cannot directly download the data from the Google Earth Engine directly onto 
 the local machine. So the best option is to download to the drive and then 
 download that data to the local drive.
 
 ---
-## Preprocess [Examples](./examples/climate-resilience/preprocess_example.py)
+## Preprocess [Examples](./examples/climate-resilience/scripts/preprocess_example.py)
 The preprocessing functions will expect that the local data drive contains the 
 downloaded data.
 
@@ -36,8 +36,6 @@ datadir
 ```
 
 ---
-## Visualize Examples [1](./notebooks/climate-resilience/visualize_example_1.ipynb), [2](./notebooks/climate-resilience/visualize_example_2.ipynb), and [3](./notebooks/climate-resilience/visualize_example_3.ipynb)
+## Visualize Examples [1](./examples/climate-resilience/notebooks/visualize_example_1.ipynb), [2](./examples/climate-resilience/notebooks/visualize_example_2.ipynb), and [3](./examples/climate-resilience/notebooks/visualize_example_3.ipynb)
 The visualization code will be easier to be used in a notebook as inline 
 visualizations can be used.
-
-The sample map that is generated from the visualization code can be viewed [here](./link/to/be/updated).

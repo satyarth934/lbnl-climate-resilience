@@ -3,13 +3,13 @@
 [pip package](https://pypi.org/project/climate-resilience/)
 
 ---
-## [Download Examples](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/download_example.py)
-This file requires a [`download_params.yml`](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/download_params.yml) file to specify the download configurations.
+## [Download Examples](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/scripts/download_example.py)
+This file requires a [`download_params.yml`](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/scripts/download_params.yml) file to specify the download configurations.
 
 We cannot directly download the data from the Google Earth Engine directly onto the local machine. So the best option is to download to the drive and then download that data to the local drive.
 
 ---
-## [Preprocess Examples](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/preprocess_example.py)
+## [Preprocess Examples](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/scripts/preprocess_example.py)
 The preprocessing functions will expect that the local data drive contains the downloaded data.
 
 If the data is on drive, the drive needs to be mounted. 
@@ -34,23 +34,23 @@ datadir
 ```
 
 ---
-## [Visualization Examples](https://github.com/satyarth934/lbnl-climate-resilience/tree/main/notebooks/climate-resilience)
+## [Visualization Examples](https://github.com/satyarth934/lbnl-climate-resilience/tree/main/examples/climate-resilience/notebooks)
 The visualization code will be easier to be used in a notebook as inline visualizations can be used.
 
 
 
-#### [Map visualization notebook](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/notebooks/climate-resilience/visualize_example_1.ipynb)
+#### [Map visualization notebook](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/notebooks/visualize_example_1.ipynb)
 
 Below is a screenshot of the interactive map with the sites marked.
 
-![Map](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/notebooks/climate-resilience/sample_map_screenshot.png?raw=true)
+![Map](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/notebooks/sample_map_screenshot.png?raw=true)
 
-![Map Colorbar](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/notebooks/climate-resilience/sample_map_colorbar.png?raw=true)
+![Map Colorbar](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/notebooks/sample_map_colorbar.png?raw=true)
 
 
 
-#### [Box plot visualization notebook](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/notebooks/climate-resilience/visualize_example_3.ipynb)
+#### [Box plot visualization notebook](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/notebooks/visualize_example_3.ipynb)
 
 Below is a screenshot of boxplot of annual precipitation in different regions of the United States.
 
-![Boxplot](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/notebooks/climate-resilience/sample_boxplot.png?raw=true)
+![Boxplot](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/notebooks/sample_boxplot.png?raw=true)
