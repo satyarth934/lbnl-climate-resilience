@@ -12,13 +12,14 @@ from ipyleaflet import (
     Marker,
     FullScreenControl,
     AwesomeIcon,
+    LayerGroup,
 )
 
 from tqdm import tqdm
 
 tqdm.pandas()
 
-from climate_resilience import utils
+# from climate_resilience import utils
 
 
 def plot_site_on_map(
@@ -42,6 +43,30 @@ def plot_site_on_map(
     marker = Marker(location=loc, draggable=False, icon=icon, title=info, alt=info)    # setting the title displays information when we hover over the markers.
 
     ipl_map.add_layer(marker)
+    
+
+def get_site_markers(
+    site: pd.Series, icon_name: str, ipl_map: leafmap.Map, feature: str,
+) -> None:
+    """Same as plot_site_on_map() but returns the marker instead of plotting it 
+    on the map. Also provides a tooltip at the markers showing the values and 
+    site ID.
+    
+    Args:
+        site (pd.Series): Site to be plotted on the map.
+        icon_name (str): Icon to be used as marker on the map.
+        ipl_map (leafmap.Map): Map on which the site markers are added.
+        feature (str): Feature based on which the markers are generated.
+    """
+
+    icon = AwesomeIcon(
+        name=icon_name, marker_color=site.loc["color"], icon_color="black", spin=False,
+    )
+    loc = [site.loc["Latitude"], site.loc["Longitude"]]
+    info = f"{feature}: {float(site[feature]):.5f}"
+    marker = Marker(location=loc, draggable=False, icon=icon, title=info, alt=info)    # setting the title displays information when we hover over the markers.
+
+    return marker
 
 
 def plot_map(
@@ -126,10 +151,22 @@ def plot_map(
         basemap=basemaps.Esri.WorldStreetMap, center=map_center, zoom=map_zoom
     )
 
-    # Plot each site on the map
-    sites.progress_apply(
-        lambda site: plot_site_on_map(site, icon_name, ipl_map, feature), axis=1
-    )
+    # Plot each site on the map (parallel function call. Ignoring because of inconsistencies.)
+    # sites.progress_apply(
+    #     lambda site: plot_site_on_map(site, icon_name, ipl_map, feature), axis=1
+    # )
+    
+    # Plot each site on map
+    site_markers = list()
+    with tqdm(range(len(sites))) as tqdm_site_nos:
+        tqdm_site_nos.set_description("Generating site markers")
+        
+        for site_i in tqdm_site_nos:
+            site_marker = get_site_markers(sites.iloc[site_i], icon_name, ipl_map, feature)
+            site_markers.append(site_marker)
+    
+    sites_lg = LayerGroup(layers=site_markers)
+    ipl_map.add_layer(sites_lg)
 
     ipl_map.add_control(FullScreenControl())
 
