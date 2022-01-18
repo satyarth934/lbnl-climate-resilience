@@ -9,8 +9,8 @@ from scipy import stats
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
-import utils
-import preprocess as pp
+from climate_resilience import utils
+from climate_resilience import preprocess as pp
 
 
 def main():

@@ -1,7 +1,7 @@
 import sys
 sys.dont_write_bytecode = True
 
-from downloader import SitesDownloader
+from climate_resilience import downloader
 
 
 def main():
@@ -9,7 +9,7 @@ def main():
     site_json_file_path = "/global/scratch/satyarth/Projects/lbnl-zexuan-code/src/zexuan_pkg/LMsites.json"
     yaml_path = "download_params.yml"
     
-    sd_obj = SitesDownloader(
+    sd_obj = downloader.SitesDownloader(
         folder=output_dir,
         site_json_file_path=site_json_file_path,
     )
