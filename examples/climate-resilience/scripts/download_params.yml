@@ -30,8 +30,9 @@ models:
 
 # List of values
 scenario_future: 
-- "rcp26"
-- "rcp45"
+- "historical"
+#- "rcp26"
+#- "rcp45"
 # - "rcp60"
 # - "rcp85"
 

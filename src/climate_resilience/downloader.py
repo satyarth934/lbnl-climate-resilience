@@ -358,8 +358,9 @@ class SitesDownloader:
         print("STATUS UPDATE: Parsed YAML Params.")
         
         # latitude (l), longitude (l), name mnemonic (n), state code (s)
-        llns = list(zip(self.sites.Latitude, self.sites.Longitude, self.sites.NameMnemonic, self.sites.StateCode))
-        
+#        llns = list(zip(self.sites.Latitude, self.sites.Longitude, self.sites.NameMnemonic, self.sites.StateCode))
+        llns = list(zip(self.sites.Latitude, self.sites.Longitude))
+       
         # All download configuration permutations
         download_configs = list(itertools.product(
             llns, 
