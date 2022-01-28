@@ -299,8 +299,8 @@ class SitesDownloader:
         # Extracting individual values from the configuration vector
         llns_i, variable_i, model_i, scenario_i = download_config
         
-        lat, long, name, state = llns_i
-        geoPoint = ee.Geometry.Point(long, lat)
+        lat, lon, name, state = llns_i
+        geoPoint = ee.Geometry.Point(float(lon), float(lat))
         
         start_date = datetime.strptime(params["start_date"], "%Y-%m-%d")
         end_date = datetime.strptime(params["end_date"], "%Y-%m-%d")
