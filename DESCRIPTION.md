@@ -54,3 +54,27 @@ Below is a screenshot of the interactive map with the sites marked.
 Below is a screenshot of boxplot of annual precipitation in different regions of the United States.
 
 ![Boxplot](https://github.com/satyarth934/lbnl-climate-resilience/blob/main/examples/climate-resilience/notebooks/sample_boxplot.png?raw=true)
+
+
+
+### Library Features:
+
+#### Downloader
+1. [Class SiteDownloader](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L24) member functions:
+    1.1. [download_model_average_daily()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L108)
+    1.2. [download_historical_daily()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L159)
+    1.3. [download_historical_monthly()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L211)
+    1.4. [download_samples()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L348)
+
+#### Preprocessing functions
+1. [calculate_Nth_percentile()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/preprocess.py#L15)
+2. [calculate_pr_count_amount()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/preprocess.py#L102)
+3. [calculate_temporal_mean()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/preprocess.py#L204)
+4. [get_climate_ensemble()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/preprocess.py#L301)
+5. [get_per_year_stats()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/preprocess.py#L359)
+6. [get_sub_period_stats()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/preprocess.py#L427)
+
+#### Vizualization functions
+1. [plot_map()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/visualize.py#L72)
+2. [plot_histogram()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/visualize.py#L202)
+3. [plot_boxplots()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/visualize.py#L262)
