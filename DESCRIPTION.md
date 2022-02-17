@@ -81,6 +81,6 @@ Below is a screenshot of boxplot of annual precipitation in different regions of
 
 
 # Contributors
-[Satyarth Praveen](mailto:satyarth@lbl.gov)
-[Zexuan Xu](mailto:zexuanxu@lbl.gov)
-[Haruko Wainwright](mailto:hmwainwright@lbl.gov)
+- [Satyarth Praveen](mailto:satyarth@lbl.gov)
+- [Zexuan Xu](mailto:zexuanxu@lbl.gov)
+- [Haruko Wainwright](mailto:hmwainwright@lbl.gov)
