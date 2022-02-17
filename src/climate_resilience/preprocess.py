@@ -18,6 +18,8 @@ def calculate_Nth_percentile(
     variables: List[str], 
     datadir: str, 
     N: int=99,
+    models: List[str]=None,
+    mean_thresh: float=None,
 ) -> None:
     """Calculates the Nth percentile.
     
@@ -28,9 +30,14 @@ def calculate_Nth_percentile(
         datadir (str): Parent directory containing all the data files.
             The generated output file is also stored here.
         N (int): Nth percentile will be calculated.
+        models (List[str]):  Models of interest. Not mandatory. 
+            Defaults to None.
+        mean_thresh (float): Threshold value to be used to filter mean values 
+            before computing percentile. Defaults to None.
     
     Returns:
-        pd.DataFrame: The output DataFrame that is written to a csv file is also returned.
+        pd.DataFrame: The output DataFrame that is written to a csv file is 
+        also returned.
         
     Raises:
         ValueError: If the integer value of N is outside the range [0, 100].
@@ -42,39 +49,67 @@ def calculate_Nth_percentile(
     
     # Declare variables that will be used to convert the processed data to a DataFrame
     df_array = []
-    df_colnames = []
+    df_colnames = ["OBJECTID", "ID", "NameMnemonic", "StateCode"]
     
     # Loop over all the sites. 
     # ID and Object ID are stored only to inspect the final result with the corresponding site
     for _oid, _id, name, state in zip(sites.OBJECTID, sites.ID, sites.NameMnemonic, sites.StateCode):
         array_ind = [_oid, _id, name, state]
-        df_colnames = ["OBJECTID", "ID", "NameMnemonic", "StateCode"]
         
-        # Iterate over all combinations of variables and scenarios
-        for sce in scenarios:
-            for var in variables:
-                
+        # Generate all combinations of all scenarios, variables[, and models].
+        if models is not None:
+            property_values = [(sce, var, model) for sce in scenarios for var in variables for model in models]
+        else:
+            property_values = [(sce, var) for sce in scenarios for var in variables]
+        
+        # iterate over each combination.
+        for pval in property_values:
+            if len(pval) == 2:    # models are not provided
+                sce, var = pval
                 csv_path = os.path.join(datadir, 
                                         f"{sce}_{var}_ensemble", 
                                         f"{name}_{state}_{sce}_{var}.csv")
                 
-                if not os.path.exists(csv_path):
-                    print(f"WARNING: {csv_path} does not exist. Continuing to the next file.")
-                    continue
-                
-                # Preprocessing step
-                df = pd.read_csv(csv_path)
-                df1 = df.set_index('date')
-                
-                mean_val = np.percentile(df1['mean'], N)  
-                
                 # Update the column names
                 colname = f"{sce}_{var}_percentile"
-                if colname not in df_colnames:
-                    df_colnames.append(colname)
                 
-                # Store the row information
-                array_ind.append(mean_val)
+            elif len(pval) == 3:    # models are provided
+                sce, var, model = pval
+                csv_path = os.path.join(datadir, 
+                                        f"{sce}_{var}", 
+                                        f"{name}_{state}_{sce}_{var}_{model}_daily.csv")
+                
+                # Update the column names
+                colname = f"{sce}_{var}_{model}_percentile"
+                
+            else:
+                raise ValueError("Incorrect number of items. It should either \
+                be (scenario, variable, model), or (scenario, variable). This \
+                error needs fixing in the code. Outer inputs are unlikely to \
+                cause this.")
+            
+            # Move on to the next data file if the current file does not exist
+            if not os.path.exists(csv_path):
+                print(f"WARNING: {csv_path} does not exist. Continuing to the next file.")
+                continue
+
+            # Preprocessing step
+            df = pd.read_csv(csv_path)
+            df1 = df.set_index('date')
+
+            if mean_thresh is not None and isinstance(mean_thresh, float):
+                df1_query = df1['mean'][df1['mean'] >= mean_thresh]
+            else:
+                df1_query = df1['mean']
+
+            mean_val = np.percentile(df1_query, N)  
+
+            # Update the column names
+            if colname not in df_colnames:
+                df_colnames.append(colname)
+
+            # Store the row information
+            array_ind.append(mean_val)
         
         # Store the row for conversion to DataFrame
         df_array.append(array_ind)
@@ -97,14 +132,15 @@ def calculate_Nth_percentile(
     print(f"STATUS UPDATE: The output file generated from calculate_Nth_percentile() function is stored as {output_csv_path}.")
     
     return df_pr
-    
+
 
 def calculate_pr_count_amount(
     sites: pd.DataFrame, 
     scenarios: List[str], 
     variables: List[str], 
     datadir: str, 
-    df_pr_csv_path: str
+    df_pr_csv_path: str,
+    models: List[str]=None,
 ) -> None:
     """Calculates precipitation count and amount.
     
@@ -116,6 +152,8 @@ def calculate_pr_count_amount(
             The generated output file is also stored here.
         df_pr_csv_path (str): This data frame can be generated using the calculate_Nth_percentile() function.
             The csv file generated from this function is passed here as argument.
+        models (List[str]):  Models of interest. Not mandatory. 
+            Defaults to None.
     
     Returns:
         pd.DataFrame: The output DataFrame that is written to a csv file is also returned.
@@ -133,49 +171,79 @@ def calculate_pr_count_amount(
     
     # Declare variables that will be used to convert the processed data to a DataFrame
     df_array = []
-    df_colnames = []
+    df_colnames = ["OBJECTID", "ID", "NameMnemonic", "StateCode"]
     
     # Loop over all the sites. 
     # ID and Object ID are stored only to inspect the final result with the corresponding site
-    i=0
+    i=0    # Using the index variable 'i' to access the historical col name at the 'i'th row.
     for _oid, _id, name, state in zip(sites.OBJECTID, sites.ID, sites.NameMnemonic, sites.StateCode):
         array_ind = [_oid, _id, name, state]
-        df_colnames = ["OBJECTID", "ID", "NameMnemonic", "StateCode"]
         
-        # Iterate over all combinations of variables and scenarios
-        for sce in scenarios:
-            for var in variables:
-                # Verify if the column required for counts and amounts calculation is present in the df_pr DataFrame.
-                historical_col_name = f"historical_{var}_percentile"
-                if historical_col_name not in df_pr:
-                    raise KeyError(f"{historical_col_name} column does not exist in the percentile data frame. Check the df_pr_csv_path argument.")
-                
+        # Generate all combinations of all scenarios, variables[, and models].
+        if models is not None:
+            property_values = [(sce, var, model) for sce in scenarios for var in variables for model in models]
+        else:
+            property_values = [(sce, var) for sce in scenarios for var in variables]
+        
+        # iterate over each combination.
+        for pval in property_values:
+            if len(pval) == 2:    # models are not provided
+                sce, var = pval
                 csv_path = os.path.join(datadir, 
                                         f"{sce}_{var}_ensemble", 
                                         f"{name}_{state}_{sce}_{var}.csv")
                 
-                if not os.path.exists(csv_path):
-                    print(f"WARNING: {csv_path} does not exist. Continuing to the next file.")
-                    continue
+                # Update the column names
+                colname_counts = f"{sce}_{var}_counts"
+                colname_amount = f"{sce}_{var}_amount"
                 
-                # Preprocessing step
-                df = pd.read_csv(csv_path)
-                df1 = df.set_index('date')
-
-                div_const = nyr_hist if sce == "historical" else nyr_proj
-                count = np.count_nonzero(df1['mean'] > df_pr[historical_col_name].iloc[i]) / div_const
-                amount = np.mean(df1[df1['mean'] > df_pr[historical_col_name].iloc[i]]['mean']) / div_const
-
-                # Update the column names and store the row information
-                colname = f"{sce}_{var}_counts"
-                if colname not in df_colnames:
-                    df_colnames.append(colname)
-                array_ind.append(count)
+                # Column name to check for in the input data frame
+                historical_col_name = f"historical_{var}_percentile"
                 
-                colname = f"{sce}_{var}_amount"
-                if colname not in df_colnames:
-                    df_colnames.append(colname)
-                array_ind.append(amount)
+            elif len(pval) == 3:    # models are provided
+                sce, var, model = pval
+                csv_path = os.path.join(datadir, 
+                                        f"{sce}_{var}", 
+                                        f"{name}_{state}_{sce}_{var}_{model}_daily.csv")
+                
+                # Update the column names
+                colname_counts = f"{sce}_{var}_{model}_counts"
+                colname_amount = f"{sce}_{var}_{model}_amount"
+                
+                # Column name to check for in the input data frame
+                historical_col_name = f"historical_{var}_{model}_percentile"
+                
+            else:
+                raise ValueError("Incorrect number of items. It should either \
+                be (scenario, variable, model), or (scenario, variable). This \
+                error needs fixing in the code. Outer inputs are unlikely to \
+                cause this.")
+            
+            # Check if the required column name exists in the input data frame
+            if historical_col_name not in df_pr:
+                raise KeyError(f"{historical_col_name} column does not exist in the percentile data frame. Check the df_pr_csv_path argument.")
+            
+            # Move on to the next data file if the current file does not exist
+            if not os.path.exists(csv_path):
+                print(f"WARNING: {csv_path} does not exist. Continuing to the next file.")
+                continue
+                
+            # Preprocessing step
+            df = pd.read_csv(csv_path)
+            df1 = df.set_index('date')
+
+            div_const = nyr_hist if sce == "historical" else nyr_proj
+            count = np.count_nonzero(df1['mean'] > df_pr[historical_col_name].iloc[i]) / div_const
+            amount = np.mean(df1[df1['mean'] > df_pr[historical_col_name].iloc[i]]['mean']) / div_const
+
+            # Update the column names and store the row information 
+            if colname_counts not in df_colnames:
+                df_colnames.append(colname_counts)
+            array_ind.append(count)
+
+            if colname_amount not in df_colnames:
+                df_colnames.append(colname_amount)
+            array_ind.append(amount)
         
         # Store the row for conversion to DataFrame
         df_array.append(array_ind)
@@ -199,7 +267,7 @@ def calculate_pr_count_amount(
     print(f"STATUS UPDATE: The output file generated from calculate_pr_count_amount() function is stored as {output_csv_path}.")    
     
     return df_pr_counts_amounts
-    
+
 
 def calculate_temporal_mean(
     sites: pd.DataFrame, 
