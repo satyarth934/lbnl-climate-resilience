@@ -78,3 +78,9 @@ Below is a screenshot of boxplot of annual precipitation in different regions of
 1. [plot_map()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/visualize.py#L72)
 2. [plot_histogram()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/visualize.py#L202)
 3. [plot_boxplots()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/visualize.py#L262)
+
+
+# Contributors
+[Satyarth Praveen](mailto:satyarth@lbl.gov)
+[Zexuan Xu](mailto:zexuanxu@lbl.gov)
+[Haruko Wainwright](mailto:hmwainwright@lbl.gov)
