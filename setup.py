@@ -24,15 +24,12 @@ with open(file=description_file, mode='r', encoding='utf-8') as f:
 
 setup(
     name="climate-resilience",
-    version="0.2.7",
+    version="0.2.8",
     description="Download, Preprocessing, and Visualization code for climate resilience data.",
     long_description=pypi_description,
     long_description_content_type="text/markdown",
-    author=[
-        "Satyarth Praveen",
-        "Zexuan Xu",
-    ],
-    author_email="satyarth@lbl.gov",
+    author="Satyarth Praveen, Zexuan Xu, Haruko Wainwright",
+    author_email="satyarth@lbl.gov, zexuanxu@lbl.gov, hmwainwright@lbl.gov",
     url="https://github.com/satyarth934/lbnl-climate-resilience",
     packages=find_packages(
         where="src",
