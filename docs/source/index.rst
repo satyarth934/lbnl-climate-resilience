@@ -10,7 +10,7 @@ Welcome to climate-resilience's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   intro
+   introduction
    constants
    downloader
    preprocess
