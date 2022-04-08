@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 version: 0.3.1
+=======
+version: 0.3.0
+>>>>>>> d6d0af71cccd5bd933d1ceb27d0c1305f3b5c993
 
 build:
   os: "ubuntu-20.04"

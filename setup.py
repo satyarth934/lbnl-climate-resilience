@@ -47,7 +47,12 @@ setup(
     ],
     project_urls={
         "Bug Tracker": "https://github.com/ALTEMIS-DOE/climate-resilience/issues",
+<<<<<<< HEAD
         "Documentation": "https://climate-resilience.readthedocs.io/",
         "Source": "https://github.com/ALTEMIS-DOE/climate-resilience",
+=======
+        "Documentation": "climate-resilience.readthedocs.io",
+        "Source": "https://github.com/ALTEMIS-DOE/climate-resilience.git",
+>>>>>>> d6d0af71cccd5bd933d1ceb27d0c1305f3b5c993
     },
 )
