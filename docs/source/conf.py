@@ -23,7 +23,7 @@ copyright = '2022, Satyarth Praveen'
 author = 'Satyarth Praveen'
 
 # The full version, including alpha/beta/rc tags
-release = open('../../VERSION').read().strip()
+release = open('../../VERSION.txt').read().strip()
 
 
 # -- General configuration ---------------------------------------------------
