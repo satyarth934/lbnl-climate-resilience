@@ -22,9 +22,10 @@ description_file = 'DESCRIPTION.md'
 with open(file=description_file, mode='r', encoding='utf-8') as f:
     pypi_description = f.read()
 
+VERSION = open('VERSION').read().strip()
 setup(
     name="climate-resilience",
-    version="0.2.8",
+    version=VERSION,
     description="Download, Preprocessing, and Visualization code for climate resilience data.",
     long_description=pypi_description,
     long_description_content_type="text/markdown",
