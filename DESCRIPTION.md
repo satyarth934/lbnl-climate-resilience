@@ -60,11 +60,11 @@ Below is a screenshot of boxplot of annual precipitation in different regions of
 ### Library Features:
 
 #### Downloader
-1. [Class SiteDownloader](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L24) member functions:
-    1.1. [download_model_average_daily()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L108)
-    1.2. [download_historical_daily()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L159)
-    1.3. [download_historical_monthly()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L211)
-    1.4. [download_samples()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L348)
+1. [Class SiteDownloader](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L24) member functions: <br>  
+  * [download_model_average_daily()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L108)
+  * [download_historical_daily()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L159)
+  * [download_historical_monthly()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L211)
+  * [download_samples()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/downloader.py#L348)
 
 #### Preprocessing functions
 1. [calculate_Nth_percentile()](https://github.com/ALTEMIS-DOE/climate-resilience/blob/main/src/climate_resilience/preprocess.py#L15)
