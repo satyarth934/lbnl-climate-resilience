@@ -1,6 +1,6 @@
-# lbnl-climate-resilience
+# climate-resilience
 
-[pip package](https://pypi.org/project/climate-resilience/)
+<a href="https://pypi.org/project/climate-resilience/"><img alt="PyPI" src="https://img.shields.io/pypi/v/black"></a>
 
 ---
 ## Download [Examples](./examples/climate-resilience/scripts/download_example.py)
