@@ -137,3 +137,5 @@ dependencies:
     - whiteboxgui 
     - widgetsnbextension 
     - xyzservices 
+    - scikit-downscale
+    - probscale
